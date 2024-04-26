@@ -1,0 +1,3 @@
+{
+  "extends": "@toolbox/typescript-config/config/tsconfig.react.lib.json"
+}
