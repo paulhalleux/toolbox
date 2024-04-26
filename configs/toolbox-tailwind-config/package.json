@@ -1,0 +1,13 @@
+{
+  "name": "@toolbox/tailwind-config",
+  "version": "1.0.0",
+  "description": "A Tailwind configuration for Toolbox projects",
+  "author": "HALLEUX, Paul <mail@paulhalleux.be>",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@toolbox/eslint-config": "workspace:*"
+  }
+}
