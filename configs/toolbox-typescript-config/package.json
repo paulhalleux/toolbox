@@ -1,0 +1,7 @@
+{
+  "name": "@toolbox/typescript-config",
+  "version": "1.0.0",
+  "description": "A TypeScript configuration for Toolbox projects",
+  "author": "HALLEUX, Paul <mail@paulhalleux.be>",
+  "license": "MIT"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@toolbox/eslint-config",
+  "version": "1.0.0",
+  "description": "An ESLint configuration for Toolbox projects",
+  "author": "HALLEUX, Paul <mail@paulhalleux.be>",
+  "license": "MIT"
+}
