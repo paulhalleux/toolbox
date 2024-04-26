@@ -1,7 +1,0 @@
-{
-  "name": "@toolbox/prettier-config",
-  "version": "1.0.0",
-  "description": "A Prettier configuration for Toolbox projects",
-  "author": "HALLEUX, Paul <mail@paulhalleux.be>",
-  "license": "MIT"
-}

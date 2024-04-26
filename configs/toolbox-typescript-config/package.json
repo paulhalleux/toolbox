@@ -3,5 +3,14 @@
   "version": "1.0.0",
   "description": "A TypeScript configuration for Toolbox projects",
   "author": "HALLEUX, Paul <mail@paulhalleux.be>",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup tsup/index.ts && tsc --declaration --emitDeclarationOnly --declarationDir dist"
+  },
+  "dependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
 }
