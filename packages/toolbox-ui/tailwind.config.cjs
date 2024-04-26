@@ -1,4 +1,4 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require("@toolbox-ui/tailwind-config")],
+  presets: [require("@toolbox/tailwind-config")],
 };

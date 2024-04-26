@@ -4,6 +4,7 @@
   "description": "A Tailwind configuration for Toolbox projects",
   "author": "HALLEUX, Paul <mail@paulhalleux.be>",
   "license": "MIT",
+  "main": "./tailwind-preset.ts",
   "dependencies": {
     "tailwindcss": "^3.4.3"
   },
