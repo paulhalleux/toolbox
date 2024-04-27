@@ -1,4 +1,4 @@
-import { DesignTokenKind, PrimitiveDesignTokenLibrary } from "../../../types";
+import { DesignTokenKind, DesignTokenLibrary } from "../../../types";
 
 /**
  * Red color tokens
@@ -64,4 +64,4 @@ export const sky = {
     $value: "#082f49",
     $version: "1.0.0",
   },
-} satisfies PrimitiveDesignTokenLibrary;
+} satisfies DesignTokenLibrary;

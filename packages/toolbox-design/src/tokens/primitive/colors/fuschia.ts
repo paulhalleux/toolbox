@@ -1,4 +1,4 @@
-import { DesignTokenKind, PrimitiveDesignTokenLibrary } from "../../../types";
+import { DesignTokenKind, DesignTokenLibrary } from "../../../types";
 
 /**
  * Red color tokens
@@ -64,4 +64,4 @@ export const fuchsia = {
     $value: "#4a044e",
     $version: "1.0.0",
   },
-} satisfies PrimitiveDesignTokenLibrary;
+} satisfies DesignTokenLibrary;

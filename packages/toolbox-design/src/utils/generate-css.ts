@@ -1,8 +1,8 @@
 import Bun from "bun";
 import fs from "node:fs";
-import { flattenLibrary } from "../utils/library";
+import { flattenLibrary } from "./library";
 import { tokenLibrary } from "../tokens";
-import { ThemedVariableList, CssVariable } from "../utils/themed-variable-list";
+import { ThemedVariableList, CssVariable } from "./themed-variable-list";
 import {
   DesignToken,
   DesignTokenKind,

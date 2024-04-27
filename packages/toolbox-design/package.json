@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "pnpm run build:project && pnpm run build:types && pnpm run build:assets",
-    "build:assets": "bun src/scripts/generate-css.ts",
+    "build:assets": "bun src/utils/generate-css.ts",
     "build:project": "tsup src/index.ts",
     "build:types": "tsc -p tsconfig.dts.json --declaration --emitDeclarationOnly --declarationDir dist"
   },
