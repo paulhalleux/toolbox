@@ -1,67 +1,67 @@
 import { DesignTokenKind, PrimitiveDesignTokenLibrary } from "../../../types";
 
 /**
- * Blue color tokens
+ * Red color tokens
  */
-export const blue = {
+export const zinc = {
   "100": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-100",
-    $value: "#dbeafe",
+    $name: "primitive-color-zinc-100",
+    $value: "#f4f4f5",
     $version: "1.0.0",
   },
   "200": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-200",
-    $value: "#bfdbfe",
+    $name: "primitive-color-zinc-200",
+    $value: "#e4e4e7",
     $version: "1.0.0",
   },
   "300": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-300",
-    $value: "#93c5fd",
+    $name: "primitive-color-zinc-300",
+    $value: "#d4d4d8",
     $version: "1.0.0",
   },
   "400": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-400",
-    $value: "#60a5fa",
+    $name: "primitive-color-zinc-400",
+    $value: "#a1a1aa",
     $version: "1.0.0",
   },
   "500": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-500",
-    $value: "#3b82f6",
+    $name: "primitive-color-zinc-500",
+    $value: "#71717a",
     $version: "1.0.0",
   },
   "600": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-600",
-    $value: "#2563eb",
+    $name: "primitive-color-zinc-600",
+    $value: "#52525b",
     $version: "1.0.0",
   },
   "700": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-700",
-    $value: "#1d4ed8",
+    $name: "primitive-color-zinc-700",
+    $value: "#3f3f46",
     $version: "1.0.0",
   },
   "800": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-800",
-    $value: "#1e40af",
+    $name: "primitive-color-zinc-800",
+    $value: "#27272a",
     $version: "1.0.0",
   },
   "900": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-900",
-    $value: "#1e3a8a",
+    $name: "primitive-color-zinc-900",
+    $value: "#18181b",
     $version: "1.0.0",
   },
   "1000": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-blue-1000",
-    $value: "#172554",
+    $name: "primitive-color-zinc-1000",
+    $value: "#09090b",
     $version: "1.0.0",
   },
 } satisfies PrimitiveDesignTokenLibrary;

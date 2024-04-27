@@ -7,9 +7,10 @@ import {
   DesignToken,
   DesignTokenKind,
   DesignTokenLibrary,
-  DesignTokenReference,
+  TokenReference,
   ValuedToken,
 } from "../types";
+import get from "lodash/get";
 
 const OUT_PATH = "dist/styles/tokens.css";
 
@@ -70,10 +71,7 @@ function getCssVariables(
  * @returns The token value
  */
 function getTokenValue<Kind extends DesignTokenKind>(
-  value: ValuedToken<
-    Kind,
-    string | number | object | DesignTokenReference<Kind>
-  >,
+  value: ValuedToken<Kind, string | number | object | TokenReference>,
   library: DesignTokenLibrary,
 ): string {
   if (typeof value.$value === "object") {
@@ -88,11 +86,13 @@ function getTokenValue<Kind extends DesignTokenKind>(
     }
   }
 
-  if (typeof value.$value === "function") {
-    return getTokenValue(value.$value(library), library);
+  const stringValue = value.$value.toString();
+
+  if (stringValue.startsWith("$ref:")) {
+    const reference = stringValue.replace("$ref:", "");
+    return getTokenValue(get(library, reference) as any, library);
   }
 
-  const stringValue = value.$value.toString();
   switch (value.$kind) {
     case DesignTokenKind.Size:
       return stringValue.endsWith("px") ? stringValue : `${stringValue}px`;

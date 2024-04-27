@@ -1,6 +1,8 @@
 import { colors } from "./colors";
-import { PrimitiveDesignTokenLibrary } from "../../types";
+import { DesignTokenLibrary } from "../../types";
+import { fontSize } from "./font-size";
 
 export const primitive = {
   colors,
-} satisfies PrimitiveDesignTokenLibrary;
+  fontSize,
+} satisfies DesignTokenLibrary;

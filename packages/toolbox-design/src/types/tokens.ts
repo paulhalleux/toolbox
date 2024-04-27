@@ -27,7 +27,7 @@ export enum DesignTokenKind {
  */
 export type ValuedToken<Kind extends DesignTokenKind, ValueType> = {
   $kind: Kind;
-  $value: ValueType | DesignTokenReference<Kind>;
+  $value: ValueType | TokenReference;
 };
 
 /**
@@ -38,9 +38,16 @@ export type ValuedToken<Kind extends DesignTokenKind, ValueType> = {
 export type ThemedToken<Kind extends DesignTokenKind, ValueType> = {
   $kind: Kind;
   $themeValues: {
-    [theme: string]: ValueType | DesignTokenReference<Kind>;
+    [theme: string]: ValueType | TokenReference;
   };
 };
+
+/**
+ * Referenced token
+ * ---------------------
+ * A referenced token is a design token that references another design token.
+ */
+export type TokenReference = `$ref:${string}`;
 
 /**
  * Design token
@@ -50,17 +57,6 @@ export type ThemedToken<Kind extends DesignTokenKind, ValueType> = {
 export type Token<Kind extends DesignTokenKind, ValueType> =
   | ValuedToken<Kind, ValueType>
   | ThemedToken<Kind, ValueType>;
-
-/**
- * Design token reference
- * ---------------------
- * A design token reference is a reference to a design token.
- * The reference can be used to refer to a design token in another design token.
- * @example { $ref: "tokens.color.primary" }
- */
-export type DesignTokenReference<Kind extends DesignTokenKind> = (
-  library: DesignTokenLibrary,
-) => ValuedToken<Kind, string | number | object>;
 
 /**
  * Color design token
@@ -119,19 +115,6 @@ export type FontWeightDesignToken = Token<
 export type SizeDesignToken = Token<DesignTokenKind.Size, number | string>;
 
 /**
- * Design token simple value
- * ---------------------
- * A design token simple value is a string or a number.
- */
-export type SimpleDesignToken =
-  | SizeDesignToken
-  | ColorDesignToken
-  | OpacityDesignToken
-  | DurationDesignToken
-  | FontFamilyDesignToken
-  | FontWeightDesignToken;
-
-/**
  * Shadow design token
  * ---------------------
  * A shadow design token is a design token that represents a shadow value.
@@ -140,11 +123,11 @@ export type SimpleDesignToken =
 export type ShadowDesignToken = Token<
   DesignTokenKind.Shadow,
   {
-    x: number | DesignTokenReference<DesignTokenKind.Size>;
-    y: number | DesignTokenReference<DesignTokenKind.Size>;
-    blur: number | DesignTokenReference<DesignTokenKind.Size>;
-    spread: number | DesignTokenReference<DesignTokenKind.Size>;
-    color: DesignTokenReference<DesignTokenKind.Color>;
+    x: number | TokenReference;
+    y: number | TokenReference;
+    blur: number | TokenReference;
+    spread: number | TokenReference;
+    color: TokenReference;
   }
 >;
 
@@ -158,10 +141,10 @@ export type GradientDesignToken = Token<
   DesignTokenKind.Gradient,
   {
     type: "linear" | "radial";
-    angle?: number | DesignTokenReference<DesignTokenKind.Size>;
+    angle?: number | TokenReference;
     stops: Array<{
-      color: string | DesignTokenReference<DesignTokenKind.Color>;
-      position: number | DesignTokenReference<DesignTokenKind.Size>;
+      color: string | TokenReference;
+      position: number | TokenReference;
     }>;
   }
 >;
@@ -175,9 +158,9 @@ export type GradientDesignToken = Token<
 export type BorderDesignToken = Token<
   DesignTokenKind.Border,
   {
-    width: number | string | DesignTokenReference<DesignTokenKind.Size>;
+    width: number | string | TokenReference;
     style: "solid" | "dashed" | "dotted";
-    color: string | DesignTokenReference<DesignTokenKind.Color>;
+    color: string | TokenReference;
   }
 >;
 
@@ -190,10 +173,10 @@ export type BorderDesignToken = Token<
 export type TypographyDesignToken = Token<
   DesignTokenKind.Typography,
   {
-    family: DesignTokenReference<DesignTokenKind.FontFamily>;
-    size: DesignTokenReference<DesignTokenKind.Size>;
-    lineHeight: DesignTokenReference<DesignTokenKind.Size>;
-    weight: DesignTokenReference<DesignTokenKind.FontWeight>;
+    family: TokenReference;
+    size: TokenReference;
+    lineHeight: TokenReference;
+    weight: TokenReference;
   }
 >;
 
@@ -207,22 +190,10 @@ export type TypographyDesignToken = Token<
 export type BreakpointDesignToken = Token<
   DesignTokenKind.Breakpoint,
   {
-    min?: DesignTokenReference<DesignTokenKind.Size>;
-    max?: DesignTokenReference<DesignTokenKind.Size>;
+    min?: TokenReference;
+    max?: TokenReference;
   }
 >;
-
-/**
- * Composite design token
- * ---------------------
- * A composite design token is a design token where the value is composed of multiple values.
- */
-export type CompositeDesignToken =
-  | ShadowDesignToken
-  | GradientDesignToken
-  | BorderDesignToken
-  | TypographyDesignToken
-  | BreakpointDesignToken;
 
 /**
  * Design token base
@@ -249,7 +220,19 @@ export type DesignTokenBase = {
  * A design token is a design token base with a value and a kind.
  */
 export type DesignToken = DesignTokenBase &
-  (SimpleDesignToken | CompositeDesignToken);
+  (
+    | SizeDesignToken
+    | ColorDesignToken
+    | OpacityDesignToken
+    | DurationDesignToken
+    | FontFamilyDesignToken
+    | FontWeightDesignToken
+    | ShadowDesignToken
+    | GradientDesignToken
+    | BorderDesignToken
+    | TypographyDesignToken
+    | BreakpointDesignToken
+  );
 
 /**
  * Design token library
@@ -257,22 +240,5 @@ export type DesignToken = DesignTokenBase &
  * A design token library is an object of key-value pairs where the value is a design token or another design token library.
  */
 export type DesignTokenLibrary = {
-  primitive: PrimitiveDesignTokenLibrary;
-  [key: string]: DesignToken | Omit<DesignTokenLibrary, "primitive">;
-};
-
-/**
- * Primary design token
- * ---------------------
- * A primary design token is a design token that is a simple design token.
- */
-export type PrimitiveDesignToken = DesignTokenBase & SimpleDesignToken;
-
-/**
- * Primitive design token library
- * ---------------------
- * A primitive design token library is an object of key-value pairs where the value is a simple design token or another primitive design token library.
- */
-export type PrimitiveDesignTokenLibrary = {
-  [key: string]: PrimitiveDesignToken | PrimitiveDesignTokenLibrary;
+  [key: string]: DesignToken | DesignTokenLibrary;
 };
