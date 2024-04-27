@@ -16,7 +16,10 @@ export function flattenLibrary(
       if ("$kind" in value) {
         return { ...acc, [`${prefix}${key}`]: value as DesignToken };
       } else {
-        return { ...acc, ...flattenLibrary(value, `${prefix}${key}.`) };
+        return {
+          ...acc,
+          ...flattenLibrary(value as DesignTokenLibrary, `${prefix}${key}.`),
+        };
       }
     },
     {},

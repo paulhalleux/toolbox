@@ -1,4 +1,4 @@
-import { DesignTokenLibrary } from "../../../types";
+import { PrimitiveDesignTokenLibrary } from "../../../types";
 import { blue } from "./blue";
 import { red } from "./red";
 
@@ -8,4 +8,4 @@ import { red } from "./red";
 export const colors = {
   blue,
   red,
-} satisfies DesignTokenLibrary;
+} satisfies PrimitiveDesignTokenLibrary;

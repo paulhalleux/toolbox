@@ -1,6 +1,6 @@
 import { DesignTokenLibrary } from "../types";
-import { primary } from "./primary";
+import { primitive } from "./primitive";
 
 export const tokenLibrary = {
-  primary,
+  primitive,
 } satisfies DesignTokenLibrary;
