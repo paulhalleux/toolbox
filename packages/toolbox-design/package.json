@@ -11,7 +11,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts && tsc --declaration --emitDeclarationOnly --declarationDir dist"
+    "build": "pnpm run build:project && pnpm run build:types && pnpm run build:assets",
+    "build:assets": "bun src/scripts/generate-css.ts",
+    "build:project": "tsup src/index.ts",
+    "build:types": "tsc -p tsconfig.dts.json --declaration --emitDeclarationOnly --declarationDir dist"
   },
   "dependencies": {
     "lodash": "^4.17.21"
@@ -19,7 +22,9 @@
   "devDependencies": {
     "@toolbox/eslint-config": "workspace:*",
     "@toolbox/typescript-config": "workspace:*",
+    "@types/bun": "^1.1.0",
     "@types/lodash": "^4.17.0",
+    "bun": "^1.1.5",
     "tsup": "^8.0.2",
     "typescript": "^5.2.2"
   }
