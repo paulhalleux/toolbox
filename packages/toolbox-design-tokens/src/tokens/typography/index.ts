@@ -1,5 +1,5 @@
 import { DesignTokenGroup, DesignTokenKind } from "../../types";
-import { primitive } from "../primitive";
+import { ReferencableDesignTokens } from "../primitive";
 
 export const typography = {
   content: {
@@ -116,6 +116,4 @@ export const typography = {
     $name: "typography-code",
     $version: "1.0.0",
   },
-} satisfies DesignTokenGroup<{
-  primitive: typeof primitive;
-}>;
+} satisfies DesignTokenGroup<ReferencableDesignTokens>;

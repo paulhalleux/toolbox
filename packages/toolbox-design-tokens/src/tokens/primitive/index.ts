@@ -12,3 +12,7 @@ export const primitive = {
   fontWeight,
   lineHeight,
 } satisfies DesignTokenGroup;
+
+export type ReferencableDesignTokens = {
+  primitive: typeof primitive;
+};

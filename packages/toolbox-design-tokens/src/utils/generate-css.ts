@@ -7,7 +7,7 @@ import { TokenLibrary } from "../token-library";
  * @param tokenLibrary The design token library
  * @returns The CSS variables
  */
-export const generateCss = (tokenLibrary: TokenLibrary) => {
+export const generateCss = (tokenLibrary: TokenLibrary<any>) => {
   const variables = new ThemedVariableList();
 
   for (const token of Object.values(tokenLibrary.flattenedTokens)) {
@@ -16,8 +16,6 @@ export const generateCss = (tokenLibrary: TokenLibrary) => {
       variables.addVariable(variable.theme, variable),
     );
   }
-
-  console.log(variables.stringify());
 
   return variables.stringify();
 };
@@ -100,6 +98,47 @@ function getTokenValue(
       )}`
         .replace(/\s+/g, " ")
         .trim();
+    } else if (tokenKind === DesignTokenKind.Shadow) {
+      return `${getTokenValue(
+        DesignTokenKind.Size,
+        value.x,
+        flattenedTokens,
+      )} ${getTokenValue(
+        DesignTokenKind.Size,
+        value.y,
+        flattenedTokens,
+      )} ${getTokenValue(
+        DesignTokenKind.Size,
+        value.blur,
+        flattenedTokens,
+      )} ${getTokenValue(
+        DesignTokenKind.Size,
+        value.spread,
+        flattenedTokens,
+      )} ${getTokenValue(DesignTokenKind.Color, value.color, flattenedTokens)}`;
+    } else if (tokenKind === DesignTokenKind.Gradient) {
+      return `${value.type}(${value.angle ?? 0}deg, ${value.stops
+        .map(
+          (stop) =>
+            `${getTokenValue(DesignTokenKind.Color, stop.color, flattenedTokens)} ${stop.position}%`,
+        )
+        .join(", ")})`;
+    } else if (tokenKind === DesignTokenKind.Border) {
+      return `${getTokenValue(DesignTokenKind.Size, value.width, flattenedTokens)} ${value.style} ${getTokenValue(
+        DesignTokenKind.Color,
+        value.color,
+        flattenedTokens,
+      )}`;
+    } else if (tokenKind === DesignTokenKind.Breakpoint) {
+      return `(min-width: ${getTokenValue(
+        DesignTokenKind.Size,
+        value.min,
+        flattenedTokens,
+      )} and max-width: ${getTokenValue(
+        DesignTokenKind.Size,
+        value.max,
+        flattenedTokens,
+      )})`;
     }
   }
 

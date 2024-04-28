@@ -31,10 +31,10 @@ export enum DesignTokenKind {
 export type ValuedToken<
   Kind extends DesignTokenKind,
   ValueType,
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = {
   $kind: Kind;
-  $value: ValueType | TokenReference<PrimitivesType>;
+  $value: ValueType | TokenReference<Referencable>;
 };
 
 /**
@@ -45,11 +45,11 @@ export type ValuedToken<
 export type ThemedToken<
   Kind extends DesignTokenKind,
   ValueType,
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = {
   $kind: Kind;
   $themeValues: {
-    [theme: string]: ValueType | TokenReference<PrimitivesType>;
+    [theme: string]: ValueType | TokenReference<Referencable>;
   };
 };
 
@@ -59,9 +59,9 @@ export type ThemedToken<
  * A referenced token is a design token that references another design token.
  */
 export type TokenReference<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
   Kind extends DesignTokenKind = DesignTokenKind,
-> = `$ref:${FlattenTokenKeys<PrimitivesType, Kind>}`;
+> = `$ref:${FlattenTokenKeys<Referencable, Kind>}`;
 
 /**
  * Design token
@@ -71,10 +71,10 @@ export type TokenReference<
 export type Token<
   Kind extends DesignTokenKind,
   ValueType,
-  PrimitivesType extends Record<string, unknown>,
+  Referencable extends Record<string, unknown>,
 > =
-  | ValuedToken<Kind, ValueType, PrimitivesType>
-  | ThemedToken<Kind, ValueType, PrimitivesType>;
+  | ValuedToken<Kind, ValueType, Referencable>
+  | ThemedToken<Kind, ValueType, Referencable>;
 
 /**
  * Color design token
@@ -83,8 +83,8 @@ export type Token<
  * @example { $kind: "color", $value: "#000000" }
  */
 export type ColorDesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
-> = Token<DesignTokenKind.Color, string, PrimitivesType>;
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
+> = Token<DesignTokenKind.Color, string, Referencable>;
 /**
  * Opacity design token
  * ---------------------
@@ -92,8 +92,8 @@ export type ColorDesignToken<
  * @example { $kind: "opacity", $value: 0.5 }
  */
 export type OpacityDesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
-> = Token<DesignTokenKind.Opacity, number, PrimitivesType>;
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
+> = Token<DesignTokenKind.Opacity, number, Referencable>;
 
 /**
  * Duration design token
@@ -102,9 +102,8 @@ export type OpacityDesignToken<
  * @example { $kind: "duration", $value: 300 }
  * @example { $kind: "duration", $value: "300ms" }
  */
-export type DurationDesignToken<
-  PrimitivesType extends Record<string, unknown>,
-> = Token<DesignTokenKind.Duration, number | string, PrimitivesType>;
+export type DurationDesignToken<Referencable extends Record<string, unknown>> =
+  Token<DesignTokenKind.Duration, number | string, Referencable>;
 
 /**
  * Font family design token
@@ -113,8 +112,8 @@ export type DurationDesignToken<
  * @example { $kind: "font-family", $value: "Arial" }
  */
 export type FontFamilyDesignToken<
-  PrimitivesType extends Record<string, unknown>,
-> = Token<DesignTokenKind.FontFamily, string, PrimitivesType>;
+  Referencable extends Record<string, unknown>,
+> = Token<DesignTokenKind.FontFamily, string, Referencable>;
 
 /**
  * Font weight design token
@@ -124,8 +123,8 @@ export type FontFamilyDesignToken<
  * @example { $kind: "font-weight", $value: "400" }
  */
 export type FontWeightDesignToken<
-  PrimitivesType extends Record<string, unknown>,
-> = Token<DesignTokenKind.FontWeight, number | string, PrimitivesType>;
+  Referencable extends Record<string, unknown>,
+> = Token<DesignTokenKind.FontWeight, number | string, Referencable>;
 
 /**
  * Line height design token
@@ -135,8 +134,8 @@ export type FontWeightDesignToken<
  * @example { $kind: "line-height", $value: "24px" }
  */
 export type LineHeightDesignToken<
-  PrimitivesType extends Record<string, unknown>,
-> = Token<DesignTokenKind.LineHeight, number | string, PrimitivesType>;
+  Referencable extends Record<string, unknown>,
+> = Token<DesignTokenKind.LineHeight, number | string, Referencable>;
 
 /**
  * Size design token
@@ -146,8 +145,8 @@ export type LineHeightDesignToken<
  * @example { $kind: "size", $value: "16px" }
  */
 export type SizeDesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
-> = Token<DesignTokenKind.Size, number | string, PrimitivesType>;
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
+> = Token<DesignTokenKind.Size, number | string, Referencable>;
 
 /**
  * Shadow design token
@@ -156,17 +155,17 @@ export type SizeDesignToken<
  * @example { $kind: "shadow", $value: { x: 0, y: 4, blur: 8, spread: 0, color: "#000000" } }
  */
 export type ShadowDesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = Token<
   DesignTokenKind.Shadow,
   {
-    x: number | TokenReference<PrimitivesType, DesignTokenKind.Size>;
-    y: number | TokenReference<PrimitivesType, DesignTokenKind.Size>;
-    blur: number | TokenReference<PrimitivesType, DesignTokenKind.Size>;
-    spread: number | TokenReference<PrimitivesType, DesignTokenKind.Size>;
-    color: TokenReference<PrimitivesType, DesignTokenKind.Color>;
+    x: number | TokenReference<Referencable, DesignTokenKind.Size>;
+    y: number | TokenReference<Referencable, DesignTokenKind.Size>;
+    blur: number | TokenReference<Referencable, DesignTokenKind.Size>;
+    spread: number | TokenReference<Referencable, DesignTokenKind.Size>;
+    color: TokenReference<Referencable, DesignTokenKind.Color>;
   },
-  PrimitivesType
+  Referencable
 >;
 
 /**
@@ -175,20 +174,19 @@ export type ShadowDesignToken<
  * A gradient design token is a design token that represents a gradient value.
  * @example { $kind: "gradient", $value: { type: "linear", angle: 45, stops: [{ color: "#000000", position: 0 }, { color: "#FFFFFF", position: 1 }] } }
  */
-export type GradientDesignToken<
-  PrimitivesType extends Record<string, unknown>,
-> = Token<
-  DesignTokenKind.Gradient,
-  {
-    type: "linear" | "radial";
-    angle?: number;
-    stops: Array<{
-      color: string | TokenReference<PrimitivesType, DesignTokenKind.Color>;
-      position: number | TokenReference<PrimitivesType, DesignTokenKind.Color>;
-    }>;
-  },
-  PrimitivesType
->;
+export type GradientDesignToken<Referencable extends Record<string, unknown>> =
+  Token<
+    DesignTokenKind.Gradient,
+    {
+      type: "linear" | "radial";
+      angle?: number;
+      stops: Array<{
+        color: string | TokenReference<Referencable, DesignTokenKind.Color>;
+        position: number;
+      }>;
+    },
+    Referencable
+  >;
 
 /**
  * Border design token
@@ -197,18 +195,15 @@ export type GradientDesignToken<
  * @example { $kind: "border", $value: { width: 1, style: "solid", color: "#000000" } }
  */
 export type BorderDesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = Token<
   DesignTokenKind.Border,
   {
-    width:
-      | number
-      | string
-      | TokenReference<PrimitivesType, DesignTokenKind.Size>;
+    width: number | string | TokenReference<Referencable, DesignTokenKind.Size>;
     style: "solid" | "dashed" | "dotted";
-    color: string | TokenReference<PrimitivesType, DesignTokenKind.Color>;
+    color: string | TokenReference<Referencable, DesignTokenKind.Color>;
   },
-  PrimitivesType
+  Referencable
 >;
 
 /**
@@ -218,18 +213,18 @@ export type BorderDesignToken<
  * @example { $kind: "typography", $value: { family: "Arial", size: 16, weight: 400, lineHeight: 24 } }
  */
 export type TypographyDesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = Token<
   DesignTokenKind.Typography,
   {
-    family: TokenReference<PrimitivesType, DesignTokenKind.FontFamily>;
-    size: TokenReference<PrimitivesType, DesignTokenKind.Size>;
-    lineHeight: TokenReference<PrimitivesType, DesignTokenKind.LineHeight>;
-    weight: TokenReference<PrimitivesType, DesignTokenKind.FontWeight>;
+    family: TokenReference<Referencable, DesignTokenKind.FontFamily>;
+    size: TokenReference<Referencable, DesignTokenKind.Size>;
+    lineHeight: TokenReference<Referencable, DesignTokenKind.LineHeight>;
+    weight: TokenReference<Referencable, DesignTokenKind.FontWeight>;
     style?: "normal" | "italic" | "oblique" | "none";
     variant?: "normal" | "small-caps" | "none";
   },
-  PrimitivesType
+  Referencable
 >;
 
 /**
@@ -240,14 +235,14 @@ export type TypographyDesignToken<
  * @example { $kind: "breakpoint", $value: { min: "0px", max: "600px" } }
  */
 export type BreakpointDesignToken<
-  PrimitivesType extends Record<string, unknown>,
+  Referencable extends Record<string, unknown>,
 > = Token<
   DesignTokenKind.Breakpoint,
   {
-    min?: TokenReference<PrimitivesType, DesignTokenKind.Size>;
-    max?: TokenReference<PrimitivesType, DesignTokenKind.Size>;
+    min?: TokenReference<Referencable, DesignTokenKind.Size>;
+    max?: TokenReference<Referencable, DesignTokenKind.Size>;
   },
-  PrimitivesType
+  Referencable
 >;
 
 /**
@@ -275,21 +270,21 @@ export type DesignTokenBase = {
  * A design token is a design token base with a value and a kind.
  */
 export type DesignToken<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = DesignTokenBase &
   (
-    | SizeDesignToken<PrimitivesType>
-    | ColorDesignToken<PrimitivesType>
-    | OpacityDesignToken<PrimitivesType>
-    | DurationDesignToken<PrimitivesType>
-    | FontFamilyDesignToken<PrimitivesType>
-    | FontWeightDesignToken<PrimitivesType>
-    | LineHeightDesignToken<PrimitivesType>
-    | ShadowDesignToken<PrimitivesType>
-    | GradientDesignToken<PrimitivesType>
-    | BorderDesignToken<PrimitivesType>
-    | TypographyDesignToken<PrimitivesType>
-    | BreakpointDesignToken<PrimitivesType>
+    | SizeDesignToken<Referencable>
+    | ColorDesignToken<Referencable>
+    | OpacityDesignToken<Referencable>
+    | DurationDesignToken<Referencable>
+    | FontFamilyDesignToken<Referencable>
+    | FontWeightDesignToken<Referencable>
+    | LineHeightDesignToken<Referencable>
+    | ShadowDesignToken<Referencable>
+    | GradientDesignToken<Referencable>
+    | BorderDesignToken<Referencable>
+    | TypographyDesignToken<Referencable>
+    | BreakpointDesignToken<Referencable>
   );
 
 /**
@@ -298,7 +293,7 @@ export type DesignToken<
  * A design token group is an object of key-value pairs where the value is a design token or another design token group.
  */
 export type DesignTokenGroup<
-  PrimitivesType extends Record<string, unknown> = Record<string, unknown>,
+  Referencable extends Record<string, unknown> = Record<string, unknown>,
 > = {
-  [key: string]: DesignToken<PrimitivesType> | DesignTokenGroup<PrimitivesType>;
+  [key: string]: DesignToken<Referencable> | DesignTokenGroup<Referencable>;
 };
