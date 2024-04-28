@@ -76,4 +76,44 @@ export class TokenLibrary<LibraryType extends DesignTokenGroup> {
   toCSS() {
     return generateCss(this);
   }
+
+  /**
+   * Get a CSS variable reference for a design token
+   * @param key - The token key
+   * @returns The CSS variable reference
+   */
+  toTailwindCSS<T extends FlattenTokenKeys<LibraryType>>(key: T): string {
+    const token = this.get(key);
+    return `var(--${token.$name})`;
+  }
+
+  /**
+   * Convert the design tokens to a Tailwind CSS structure
+   * @param selector - A function to select the design token group
+   */
+  toTailwindCSSGroup(selector: (library: LibraryType) => DesignTokenGroup) {
+    const tokens = selector(this.tokens);
+    return this.#createTailwindStructure(tokens);
+  }
+
+  /**
+   * Create a Tailwind CSS structure for the design tokens
+   * @param group - The design token group
+   * @returns The Tailwind CSS structure
+   */
+  #createTailwindStructure(group: DesignTokenGroup) {
+    return Object.entries(group).reduce((acc, [key, value]) => {
+      if (typeof value === "object" && !("$kind" in value)) {
+        return {
+          ...acc,
+          [key]: this.#createTailwindStructure(value),
+        };
+      }
+
+      return {
+        ...acc,
+        [key]: `var(--${value.$name})`,
+      };
+    }, {});
+  }
 }

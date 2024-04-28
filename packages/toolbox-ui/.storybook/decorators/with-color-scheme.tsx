@@ -33,7 +33,10 @@ export const WithColorScheme: Decorator = (Story, context) => {
 
 const SchemeContainer = ({ children, theme }) => {
   return (
-    <PanelGroup.Panel data-theme={theme} className="scheme-container bg text">
+    <PanelGroup.Panel
+      data-theme={theme}
+      className="scheme-container bg-base text-base"
+    >
       {children}
     </PanelGroup.Panel>
   );
