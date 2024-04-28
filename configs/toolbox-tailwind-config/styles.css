@@ -170,9 +170,9 @@
 }
 [data-theme="light"] {
   --color-container-base: var(--primitive-color-white);
-  --color-container-secondary: var(--primitive-color-zinc-200);
+  --color-container-secondary: var(--primitive-color-zinc-100);
   --color-text-base: var(--primitive-color-black);
-  --color-border-base: var(--primitive-color-zinc-300);
+  --color-border-base: var(--primitive-color-zinc-200);
   --color-border-secondary: var(--primitive-color-zinc-300);
 }
 [data-theme="dark"] {

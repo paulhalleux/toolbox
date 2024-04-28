@@ -16,7 +16,7 @@ export const colors = {
       $kind: DesignTokenKind.Color,
       $name: "color-container-secondary",
       $themeValues: {
-        light: "$ref:primitive.colors.zinc.200",
+        light: "$ref:primitive.colors.zinc.100",
         dark: "$ref:primitive.colors.zinc.800",
       },
       $version: "1.0.0",
@@ -38,7 +38,7 @@ export const colors = {
       $kind: DesignTokenKind.Color,
       $name: "color-border-base",
       $themeValues: {
-        light: "$ref:primitive.colors.zinc.300",
+        light: "$ref:primitive.colors.zinc.200",
         dark: "$ref:primitive.colors.zinc.800",
       },
       $version: "1.0.0",

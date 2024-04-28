@@ -16,7 +16,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &:not(:last-child) {
-    border-right: 1px solid #a3a3a3;
-  }
 }

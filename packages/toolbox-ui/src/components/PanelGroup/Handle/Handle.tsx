@@ -7,16 +7,15 @@ import { useState } from "react";
 
 const indicatorClasses = {
   horizontal:
-    "w-2.5 h-6 cursor-ew-resize translate-x-[-50%] translate-y-[-50%] top-[50%]",
+    "w-[7px] h-6 cursor-ew-resize translate-x-[-50%] translate-y-[-50%] top-[50%]",
   vertical:
-    "w-6 h-2.5 cursor-ns-resize translate-x-[-50%] translate-y-[-50%] left-[50%]",
+    "w-6 h-[7px] cursor-ns-resize translate-x-[-50%] translate-y-[-50%] left-[50%]",
 };
 
 export function Handle({
   className,
   showDragIndicator,
   direction,
-  active,
   ...rest
 }: Omit<PanelResizeHandleProps, "children"> & {
   active?: boolean;
@@ -29,12 +28,12 @@ export function Handle({
     <BasePanelResizeHandle
       onDragging={setDragging}
       className={clsx(
-        "relative border",
+        "relative",
         {
-          "w-[1px]": direction === "horizontal",
-          "h-[1px]": direction === "vertical",
-          "border-base": !dragging && !active,
-          "border-primitive-blue-600": dragging || active,
+          "border-r": direction === "horizontal",
+          "border-b": direction === "vertical",
+          "border-base": !dragging,
+          "border-primitive-blue-600": dragging,
         },
         className,
       )}
@@ -43,12 +42,11 @@ export function Handle({
       {showDragIndicator && (
         <div
           className={clsx(
-            "absolute z-20 rounded-sm border",
+            "absolute z-20 rounded-sm border pointer-events-none",
             indicatorClasses[direction],
             {
-              "bg-secondary border-secondary": !dragging && !active,
-              "bg-primitive-blue-600 border-primitive-blue-400":
-                dragging || active,
+              "bg-secondary border-secondary": !dragging,
+              "bg-primitive-blue-600 border-primitive-blue-400": dragging,
             },
           )}
         />

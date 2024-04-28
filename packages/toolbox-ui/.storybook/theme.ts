@@ -28,7 +28,7 @@ export const theme = create({
   // Form colors
   inputBg: "#ffffff",
   inputBorder: "#e4e4e4",
-  inputTextColor: "#e4e4e4",
+  inputTextColor: "#0D0D0D",
   inputBorderRadius: 2,
 
   colorSecondary: "#474747",
