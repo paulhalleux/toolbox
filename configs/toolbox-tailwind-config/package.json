@@ -5,10 +5,20 @@
   "author": "HALLEUX, Paul <mail@paulhalleux.be>",
   "license": "MIT",
   "main": "./tailwind-preset.ts",
+  "exports": {
+    ".": "./tailwind-preset.ts",
+    "./styles.css": "./styles.css"
+  },
+  "scripts": {
+    "build:css": "tsx generate-css.ts"
+  },
   "dependencies": {
+    "@toolbox/design-tokens": "workspace:*",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@toolbox/eslint-config": "workspace:*"
+    "@toolbox/eslint-config": "workspace:*",
+    "@types/node": "^20.12.7",
+    "tsx": "^4.7.3"
   }
 }

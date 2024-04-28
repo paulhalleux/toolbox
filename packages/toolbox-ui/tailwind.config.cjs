@@ -1,4 +1,2 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  presets: [require("@toolbox/tailwind-config")],
-};
+import config from '@toolbox/tailwind-config';
+export default config;

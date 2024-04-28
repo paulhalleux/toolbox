@@ -31,7 +31,7 @@ export class TokenLibrary<LibraryType extends DesignTokenGroup> {
    * Get the design tokens
    * @returns The design tokens
    */
-  get tokens(): DesignTokenGroup {
+  get tokens(): LibraryType {
     return this.#tokens;
   }
 
