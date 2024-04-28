@@ -19,6 +19,7 @@ export class ThemedVariableList {
     }
     this.#variables.get(theme)?.push(variable);
   }
+
   /**
    * Stringify the variables
    * @returns The stringified variables
@@ -34,12 +35,25 @@ export class ThemedVariableList {
       }
 
       for (const variable of variables) {
-        css += `  --${variable.name}: ${variable.value};\n`;
+        css += `  --${variable.name}: ${this.#getVariableValue(variable.value)};\n`;
       }
 
       css += "}\n";
     }
 
     return css;
+  }
+
+  /**
+   * Get the value of a token
+   * @param value The token value
+   * @returns The token value
+   */
+  #getVariableValue(value: string | { $ref: string }): string {
+    if (typeof value === "string") {
+      return value;
+    }
+
+    return `var(--${value.$ref})`;
   }
 }

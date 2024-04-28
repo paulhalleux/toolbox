@@ -8,7 +8,7 @@ import { generateCss } from "./utils/generate-css";
  * ---------------------
  * A token library is a collection of design tokens and methods to access them.
  */
-export class TokenLibrary<LibraryType extends DesignTokenGroup> {
+export class TokenLibrary<LibraryType extends DesignTokenGroup = {}> {
   readonly #tokens: LibraryType;
   readonly #flattenedTokens: Record<string, DesignToken> = {};
 

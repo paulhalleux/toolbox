@@ -2,12 +2,15 @@ import { DesignTokenKind } from "./tokens";
 
 export type FlattenTokenKeys<
   T extends Record<string, unknown>,
+  Kind extends DesignTokenKind = DesignTokenKind,
   Key = keyof T,
 > = Key extends string
   ? T[Key] extends Record<string, unknown>
-    ? T[Key] extends { $kind: DesignTokenKind }
+    ? T[Key] extends { $kind: Kind }
       ? `${Key}`
-      : `${Key}.${FlattenTokenKeys<T[Key]>}`
+      : T[Key] extends { $kind: DesignTokenKind }
+        ? never
+        : `${Key}.${FlattenTokenKeys<T[Key], Kind>}`
     : `${Key}`
   : never;
 

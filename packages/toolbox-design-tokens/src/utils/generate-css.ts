@@ -1,10 +1,5 @@
 import { ThemedVariableList, CssVariable } from "./themed-variable-list";
-import {
-  DesignToken,
-  DesignTokenKind,
-  TokenReference,
-  ValuedToken,
-} from "../types";
+import { DesignToken, DesignTokenKind } from "../types";
 import { TokenLibrary } from "../token-library";
 
 /**
@@ -12,7 +7,7 @@ import { TokenLibrary } from "../token-library";
  * @param tokenLibrary The design token library
  * @returns The CSS variables
  */
-export const generateCss = async (tokenLibrary: TokenLibrary<any>) => {
+export const generateCss = (tokenLibrary: TokenLibrary) => {
   const variables = new ThemedVariableList();
 
   for (const token of Object.values(tokenLibrary.flattenedTokens)) {
@@ -21,6 +16,8 @@ export const generateCss = async (tokenLibrary: TokenLibrary<any>) => {
       variables.addVariable(variable.theme, variable),
     );
   }
+
+  console.log(variables.stringify());
 
   return variables.stringify();
 };
@@ -38,7 +35,7 @@ function getCssVariables(
   if ("$value" in token) {
     const variable = {
       theme: "global",
-      value: getTokenValue(token, flattenedTokens),
+      value: getTokenValue(token.$kind, token.$value, flattenedTokens),
       name: token.$name,
     };
     return [variable];
@@ -47,7 +44,7 @@ function getCssVariables(
   return Object.entries(token.$themeValues).map(([theme, value]) => {
     return {
       theme: theme,
-      value: getTokenValue(value, flattenedTokens),
+      value: getTokenValue(token.$kind, value, flattenedTokens),
       name: token.$name,
     };
   });
@@ -55,36 +52,56 @@ function getCssVariables(
 
 /**
  * Get the value of a token
+ * @param tokenKind The kind of token
  * @param value The token value
  * @param flattenedTokens The design token library
  * @returns The token value
  */
-function getTokenValue<Kind extends DesignTokenKind>(
-  value: ValuedToken<Kind, string | number | object | TokenReference>,
+function getTokenValue(
+  tokenKind: DesignTokenKind,
+  value: any,
   flattenedTokens: Record<string, DesignToken>,
 ): string {
-  if (typeof value.$value === "object") {
-    switch (value.$kind) {
-      case DesignTokenKind.Color:
-        return getTokenValue(
-          value.$value as ValuedToken<DesignTokenKind.Color, string>,
-          flattenedTokens,
-        );
-      default:
-        return "";
+  if (typeof value === "string" && value.startsWith("$ref:")) {
+    const ref = value.replace("$ref:", "");
+    const token = flattenedTokens[ref];
+    if (!token || !("$value" in token)) {
+      throw new Error(`Token ${ref} not found`);
+    }
+    return "var(--" + token.$name + ")";
+  } else if (typeof value === "string" || typeof value === "number") {
+    const stringValue = String(value);
+
+    if (tokenKind === DesignTokenKind.Color) {
+      return stringValue;
+    } else if (tokenKind === DesignTokenKind.Size) {
+      return stringValue.endsWith("px") ? stringValue : `${stringValue}px`;
+    }
+
+    return stringValue;
+  } else if (typeof value === "object") {
+    if (tokenKind === DesignTokenKind.Typography) {
+      return `${value.style ?? ""} ${value.variant ?? ""} ${getTokenValue(
+        DesignTokenKind.FontWeight,
+        value.weight,
+        flattenedTokens,
+      )} ${getTokenValue(
+        DesignTokenKind.Size,
+        value.size,
+        flattenedTokens,
+      )} / ${getTokenValue(
+        DesignTokenKind.Size,
+        value.lineHeight,
+        flattenedTokens,
+      )} ${getTokenValue(
+        DesignTokenKind.FontFamily,
+        value.family,
+        flattenedTokens,
+      )}`
+        .replace(/\s+/g, " ")
+        .trim();
     }
   }
 
-  const stringValue = value.$value.toString();
-  if (stringValue.startsWith("$ref:")) {
-    const reference = stringValue.replace("$ref:", "");
-    return getTokenValue(flattenedTokens[reference] as any, flattenedTokens);
-  }
-
-  switch (value.$kind) {
-    case DesignTokenKind.Size:
-      return stringValue.endsWith("px") ? stringValue : `${stringValue}px`;
-    default:
-      return stringValue;
-  }
+  return `"NOT IMPLEMENTED"`;
 }
