@@ -235,10 +235,10 @@ export type DesignToken = DesignTokenBase &
   );
 
 /**
- * Design token library
+ * Design token group
  * ---------------------
- * A design token library is an object of key-value pairs where the value is a design token or another design token library.
+ * A design token group is an object of key-value pairs where the value is a design token or another design token group.
  */
-export type DesignTokenLibrary = {
-  [key: string]: DesignToken | DesignTokenLibrary;
+export type DesignTokenGroup = {
+  [key: string]: DesignToken | DesignTokenGroup;
 };

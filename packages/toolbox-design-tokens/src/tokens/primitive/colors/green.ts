@@ -1,4 +1,4 @@
-import { DesignTokenKind, DesignTokenLibrary } from "../../../types";
+import { DesignTokenKind, DesignTokenGroup } from "../../../types";
 
 /**
  * Red color tokens
@@ -64,4 +64,4 @@ export const green = {
     $value: "#052e16",
     $version: "1.0.0",
   },
-} satisfies DesignTokenLibrary;
+} satisfies DesignTokenGroup;

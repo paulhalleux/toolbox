@@ -1,4 +1,4 @@
-import { DesignTokenLibrary } from "../../../types";
+import { DesignTokenGroup } from "../../../types";
 import { blue } from "./blue";
 import { red } from "./red";
 import { zinc } from "./zinc";
@@ -30,4 +30,4 @@ export const colors = {
   purple,
   fuchsia,
   pink,
-} satisfies DesignTokenLibrary;
+} satisfies DesignTokenGroup;

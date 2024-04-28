@@ -1,4 +1,4 @@
-import { DesignToken, DesignTokenLibrary } from "../types";
+import { DesignToken, DesignTokenGroup } from "../types";
 
 /**
  * Flatten a design token library into a flat object
@@ -6,8 +6,8 @@ import { DesignToken, DesignTokenLibrary } from "../types";
  * @param prefix - The prefix to add to the keys
  * @returns The flattened design token library
  */
-export function flattenLibrary(
-  library: DesignTokenLibrary,
+export function flattenTokens(
+  library: DesignTokenGroup,
   prefix = "",
 ): Record<string, DesignToken> {
   return Object.keys(library).reduce<Record<string, DesignToken>>(
@@ -18,7 +18,7 @@ export function flattenLibrary(
       } else {
         return {
           ...acc,
-          ...flattenLibrary(value as DesignTokenLibrary, `${prefix}${key}.`),
+          ...flattenTokens(value as DesignTokenGroup, `${prefix}${key}.`),
         };
       }
     },
