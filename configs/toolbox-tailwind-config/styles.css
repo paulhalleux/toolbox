@@ -173,7 +173,7 @@
   --color-focus: var(--primitive-color-blue-500);
   --color-container-base: var(--primitive-color-white);
   --color-container-secondary: var(--primitive-color-zinc-100);
-  --color-container-active: var(--primitive-color-zinc-100);
+  --color-container-active: var(--primitive-color-zinc-200);
   --color-container-hover: var(--primitive-color-white);
   --color-text-base: var(--primitive-color-black);
   --color-border-base: var(--primitive-color-zinc-300);
@@ -183,7 +183,7 @@
   --color-focus: var(--primitive-color-blue-500);
   --color-container-base: var(--primitive-color-zinc-900);
   --color-container-secondary: var(--primitive-color-zinc-800);
-  --color-container-active: var(--primitive-color-zinc-1000);
+  --color-container-active: var(--primitive-color-zinc-700);
   --color-container-hover: var(--primitive-color-zinc-900);
   --color-text-base: var(--primitive-color-white);
   --color-border-base: var(--primitive-color-zinc-700);

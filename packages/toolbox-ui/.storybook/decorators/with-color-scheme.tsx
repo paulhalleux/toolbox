@@ -1,5 +1,5 @@
 import { Decorator } from "@storybook/react";
-import { PanelGroup } from "../../src";
+import { PanelGroup, ThemeProvider } from "../../src";
 
 export const WithColorScheme: Decorator = (Story, context) => {
   const { scheme } = context.globals;
@@ -33,12 +33,14 @@ export const WithColorScheme: Decorator = (Story, context) => {
 
 const SchemeContainer = ({ children, theme }) => {
   return (
-    <PanelGroup.Panel
-      data-theme={theme}
-      minSize={25}
-      className="scheme-container bg-base text-base"
-    >
-      {children}
-    </PanelGroup.Panel>
+    <ThemeProvider theme={theme}>
+      <PanelGroup.Panel
+        data-theme={theme}
+        minSize={25}
+        className="scheme-container bg-base text-base"
+      >
+        {children}
+      </PanelGroup.Panel>
+    </ThemeProvider>
   );
 };

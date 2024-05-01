@@ -34,8 +34,8 @@ export const colors = {
       $kind: DesignTokenKind.Color,
       $name: "color-container-active",
       $themeValues: {
-        light: "$ref:primitive.colors.zinc.100",
-        dark: "$ref:primitive.colors.zinc.1000",
+        light: "$ref:primitive.colors.zinc.200",
+        dark: "$ref:primitive.colors.zinc.700",
       },
       $version: "1.0.0",
     },

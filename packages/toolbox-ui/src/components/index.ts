@@ -2,3 +2,8 @@ export * from "./PanelGroup";
 export * from "./Button";
 export * from "./Text";
 export * from "./Badge";
+export * from "./Toolbar";
+export * from "./Tooltip";
+export * from "./Popover";
+export * from "./ThemeProvider";
+export * from "./Tree";

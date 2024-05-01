@@ -1,6 +1,7 @@
 import { Text, TypographyType } from "./Text";
 import { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "../Badge";
+import { useState } from "react";
 
 const meta: Meta<typeof Text> = {
   title: "Text",
@@ -23,6 +24,23 @@ export const Default: Story = {
             </Text>
           </div>
         ))}
+      </div>
+    );
+  },
+};
+
+export const Editable: Story = {
+  render: (args) => {
+    const [content, setContent] = useState(
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    );
+
+    return (
+      <div className="p-24 w-full flex flex-col items-start gap-2">
+        <Badge>Editable text</Badge>
+        <Text editable onEdit={setContent} {...args}>
+          {content}
+        </Text>
       </div>
     );
   },
