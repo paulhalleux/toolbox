@@ -35,6 +35,7 @@ const SchemeContainer = ({ children, theme }) => {
   return (
     <PanelGroup.Panel
       data-theme={theme}
+      minSize={25}
       className="scheme-container bg-base text-base"
     >
       {children}

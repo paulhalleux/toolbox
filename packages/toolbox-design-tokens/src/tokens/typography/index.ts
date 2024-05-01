@@ -3,6 +3,17 @@ import { ReferencableDesignTokens } from "../primitive";
 
 export const typography = {
   content: {
+    "x-small": {
+      $kind: DesignTokenKind.Typography,
+      $value: {
+        family: "$ref:primitive.fontFamily.sans",
+        size: "$ref:primitive.fontSize.xs",
+        weight: "$ref:primitive.fontWeight.normal",
+        lineHeight: "$ref:primitive.lineHeight.none",
+      },
+      $name: "typography-content-x-small",
+      $version: "1.0.0",
+    },
     small: {
       $kind: DesignTokenKind.Typography,
       $value: {

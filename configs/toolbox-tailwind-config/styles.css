@@ -157,6 +157,7 @@
   --primitive-line-height-tight: 1.25;
   --primitive-line-height-base: 1.5;
   --primitive-line-height-loose: 2;
+  --typography-content-x-small: var(--primitive-font-weight-normal) var(--primitive-font-size-xs) / var(--primitive-line-height-none) var(--primitive-font-family-sans);
   --typography-content-small: var(--primitive-font-weight-normal) var(--primitive-font-size-sm) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
   --typography-content-base: var(--primitive-font-weight-normal) var(--primitive-font-size-md) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
   --typography-content-large: var(--primitive-font-weight-normal) var(--primitive-font-size-lg) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
@@ -169,16 +170,22 @@
   --typography-code: var(--primitive-font-weight-normal) var(--primitive-font-size-sm) / var(--primitive-line-height-base) var(--primitive-font-family-mono);
 }
 [data-theme="light"] {
+  --color-focus: var(--primitive-color-blue-500);
   --color-container-base: var(--primitive-color-white);
   --color-container-secondary: var(--primitive-color-zinc-100);
+  --color-container-active: var(--primitive-color-zinc-100);
+  --color-container-hover: var(--primitive-color-white);
   --color-text-base: var(--primitive-color-black);
-  --color-border-base: var(--primitive-color-zinc-200);
-  --color-border-secondary: var(--primitive-color-zinc-300);
+  --color-border-base: var(--primitive-color-zinc-300);
+  --color-border-secondary: var(--primitive-color-zinc-400);
 }
 [data-theme="dark"] {
+  --color-focus: var(--primitive-color-blue-500);
   --color-container-base: var(--primitive-color-zinc-900);
   --color-container-secondary: var(--primitive-color-zinc-800);
+  --color-container-active: var(--primitive-color-zinc-1000);
+  --color-container-hover: var(--primitive-color-zinc-900);
   --color-text-base: var(--primitive-color-white);
-  --color-border-base: var(--primitive-color-zinc-800);
-  --color-border-secondary: var(--primitive-color-zinc-700);
+  --color-border-base: var(--primitive-color-zinc-700);
+  --color-border-secondary: var(--primitive-color-zinc-600);
 }

@@ -19,6 +19,9 @@ export default {
       borderColor: tokenLibrary.toTailwindCSSGroup(
         (library) => library.colors.border,
       ),
+      ringColor: {
+        base: tokenLibrary.toTailwindCSS("colors.focus"),
+      },
     },
   },
 } as PresetsConfig;

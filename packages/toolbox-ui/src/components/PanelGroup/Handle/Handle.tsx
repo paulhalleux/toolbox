@@ -28,7 +28,7 @@ export function Handle({
     <BasePanelResizeHandle
       onDragging={setDragging}
       className={clsx(
-        "relative",
+        "group relative focus:outline-none focus:border-primitive-blue-600",
         {
           "border-r": direction === "horizontal",
           "border-b": direction === "vertical",
@@ -42,7 +42,7 @@ export function Handle({
       {showDragIndicator && (
         <div
           className={clsx(
-            "absolute z-20 rounded-sm border pointer-events-none",
+            "absolute z-20 rounded-sm border pointer-events-none group-focus:bg-primitive-blue-600 group-focus:border-primitive-blue-400",
             indicatorClasses[direction],
             {
               "bg-secondary border-secondary": !dragging,
