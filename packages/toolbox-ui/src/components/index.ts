@@ -11,3 +11,4 @@ export * from "./Navbar";
 export * from "./Modal";
 export * from "./Input";
 export * from "./AsChild";
+export * from "./Portal";

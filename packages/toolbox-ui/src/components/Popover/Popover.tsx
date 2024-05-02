@@ -17,7 +17,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { omit } from "lodash";
 import React from "react";
-import { useTheme } from "../ThemeProvider";
+import { usePortalTarget } from "../Portal/Portal";
 
 // see https://codesandbox.io/p/sandbox/xenodochial-grass-js3bo9?file=%2Fsrc%2FTooltip.tsx%3A1%2C1-159%2C4
 
@@ -177,18 +177,17 @@ const PopoverContent = React.forwardRef<
       | ((props: { close: () => void }) => React.ReactNode);
   }
 >(function PopoverContent({ style, ...props }, propRef) {
-  const { theme } = useTheme();
   const context = usePopoverContext();
+  const portalRoot = usePortalTarget();
   const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
-  if (!props.children) return null;
+  if (!props.children || (portalRoot && !portalRoot.current)) return null;
 
   return (
-    <FloatingPortal>
+    <FloatingPortal root={portalRoot}>
       <AnimatePresence>
         {context.open && (
           <motion.div
-            data-theme={theme}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

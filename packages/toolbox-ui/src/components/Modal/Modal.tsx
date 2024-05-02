@@ -1,9 +1,8 @@
 import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { createPortal } from "react-dom";
-import { ThemeProvider, useTheme } from "../ThemeProvider";
 import { modalStyles, ModalVariant } from "./Modal.styles";
 import { clsx } from "clsx";
+import { Portal } from "../Portal/Portal";
 
 type ModalProps = PropsWithChildren<{
   open: boolean;
@@ -22,11 +21,10 @@ export function Modal({
   position,
   ...rest
 }: ModalProps) {
-  const { theme } = useTheme();
   const classes = modalStyles({ size, className });
 
-  return createPortal(
-    <ThemeProvider theme={theme}>
+  return (
+    <Portal>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -59,7 +57,6 @@ export function Modal({
           </motion.div>
         )}
       </AnimatePresence>
-    </ThemeProvider>,
-    document.body,
+    </Portal>
   );
 }

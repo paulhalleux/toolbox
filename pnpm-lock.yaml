@@ -147,6 +147,106 @@ importers:
         specifier: ^5.2.2
         version: 5.4.5
 
+  packages/toolbox-form:
+    dependencies:
+      autoprefixer:
+        specifier: ^10.4.19
+        version: 10.4.19(postcss@8.4.38)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      postcss:
+        specifier: ^8.4.38
+        version: 8.4.38
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+      tailwind-variants:
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@3.4.3)
+      tailwindcss:
+        specifier: ^3.4.3
+        version: 3.4.3
+    devDependencies:
+      '@storybook/addon-essentials':
+        specifier: ^8.0.9
+        version: 8.0.9(@types/react@18.3.0)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/addon-interactions':
+        specifier: ^8.0.9
+        version: 8.0.9
+      '@storybook/addon-links':
+        specifier: ^8.0.9
+        version: 8.0.9(react@18.3.1)
+      '@storybook/addon-onboarding':
+        specifier: ^8.0.9
+        version: 8.0.9
+      '@storybook/addon-postcss':
+        specifier: ^2.0.0
+        version: 2.0.0(webpack@5.91.0(esbuild@0.19.12))
+      '@storybook/blocks':
+        specifier: ^8.0.9
+        version: 8.0.9(@types/react@18.3.0)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/manager-api':
+        specifier: ^8.0.9
+        version: 8.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/react':
+        specifier: ^8.0.9
+        version: 8.0.9(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
+      '@storybook/react-vite':
+        specifier: ^8.0.9
+        version: 8.0.9(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.16.4)(typescript@5.4.5)(vite@5.2.10(@types/node@20.12.7)(terser@5.30.4))
+      '@storybook/test':
+        specifier: ^8.0.9
+        version: 8.0.9
+      '@storybook/theming':
+        specifier: ^8.0.9
+        version: 8.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@toolbox/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/toolbox-eslint-config
+      '@toolbox/tailwind-config':
+        specifier: workspace:*
+        version: link:../../configs/toolbox-tailwind-config
+      '@toolbox/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/toolbox-typescript-config
+      '@toolbox/ui':
+        specifier: workspace:*
+        version: link:../toolbox-ui
+      '@types/react':
+        specifier: ^18.2.66
+        version: 18.3.0
+      '@types/react-dom':
+        specifier: ^18.2.22
+        version: 18.3.0
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.2.0
+        version: 7.7.1(@typescript-eslint/parser@7.7.1(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
+      '@typescript-eslint/parser':
+        specifier: ^7.2.0
+        version: 7.7.1(eslint@8.57.0)(typescript@5.4.5)
+      '@vitejs/plugin-react':
+        specifier: ^4.2.1
+        version: 4.2.1(vite@5.2.10(@types/node@20.12.7)(terser@5.30.4))
+      storybook:
+        specifier: ^8.0.9
+        version: 8.0.9(@babel/preset-env@7.24.4(@babel/core@7.24.4))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(postcss@8.4.38)(typescript@5.4.5)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.4.5
+      vite:
+        specifier: ^5.2.0
+        version: 5.2.10(@types/node@20.12.7)(terser@5.30.4)
+
   packages/toolbox-ui:
     dependencies:
       '@floating-ui/react':
@@ -10212,7 +10312,7 @@ snapshots:
 
   fs-extra@11.1.1:
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jsonfile: 6.1.0
       universalify: 2.0.1
 
@@ -10871,7 +10971,7 @@ snapshots:
       babel-core: 7.0.0-bridge.0(@babel/core@7.24.4)
       chalk: 4.1.2
       flow-parser: 0.235.1
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       micromatch: 4.0.5
       neo-async: 2.6.2
       node-dir: 0.1.17

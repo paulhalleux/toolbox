@@ -22,7 +22,7 @@ export function ToolbarItem({
       <Tooltip.Trigger asChild>
         <button
           className={clsx(
-            "h-8 w-8 rounded flex items-center justify-center hover:bg-secondary active:bg-active",
+            "h-8 w-8 rounded flex items-center justify-center hover:bg-secondary active:bg-active text text-base",
             {
               "!bg-active": active,
             },

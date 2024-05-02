@@ -1,33 +1,23 @@
 {
-  "name": "@toolbox/ui",
+  "name": "@toolbox/form",
   "version": "0.0.0",
-  "description": "UI components for Toolbox",
+  "description": "Form components for Toolbox",
   "author": "HALLEUX, Paul <mail@paulhalleux.be>",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "pnpm run build:lib && pnpm run build:css",
     "build:lib": "tsup src/index.ts && tsc --declaration --emitDeclarationOnly --declarationDir dist",
     "build:css": "tailwindcss build src/index.css -o dist/styles.css",
-    "dev": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
-  "peerDependencies": {
-    "react-resizable-panels": "^2.0.18",
-    "zustand": "^4.5.2"
-  },
   "dependencies": {
-    "@floating-ui/react": "^0.26.13",
     "autoprefixer": "^10.4.19",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.1.7",
     "lodash": "^4.17.21",
-    "lucide-react": "^0.376.0",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -49,17 +39,16 @@
     "@toolbox/eslint-config": "workspace:*",
     "@toolbox/tailwind-config": "workspace:*",
     "@toolbox/typescript-config": "workspace:*",
+    "@toolbox/ui": "workspace:*",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "react-resizable-panels": "^2.0.18",
     "storybook": "^8.0.9",
     "tsup": "^8.0.2",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "zustand": "^4.5.2"
+    "vite": "^5.2.0"
   },
   "eslintConfig": {
     "extends": [

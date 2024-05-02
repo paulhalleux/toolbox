@@ -3,7 +3,7 @@ import { PanelGroup } from "@toolbox/ui";
 
 export function ContentSidebar() {
   return (
-    <PanelGroup direction="vertical">
+    <PanelGroup direction="vertical" className="bg-base">
       <PanelGroup.Panel defaultSize={20} minSize={20}>
         <PagesSection />
       </PanelGroup.Panel>

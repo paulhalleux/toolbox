@@ -1,6 +1,5 @@
 import { Decorator } from "@storybook/react";
-import { PanelGroup, PortalTarget, ThemeProvider } from "../../src";
-import { useState } from "react";
+import { PanelGroup, ThemeProvider } from "@toolbox/ui";
 
 export const WithColorScheme: Decorator = (Story, context) => {
   const { scheme } = context.globals;
@@ -33,20 +32,14 @@ export const WithColorScheme: Decorator = (Story, context) => {
 };
 
 const SchemeContainer = ({ children, theme }) => {
-  const [containerRef, setContainerRef] = useState<HTMLDivElement>(null);
-
   return (
-    <div ref={setContainerRef} className="contents">
-      <PortalTarget>
-        <ThemeProvider theme={theme} target={containerRef}>
-          <PanelGroup.Panel
-            minSize={25}
-            className="scheme-container bg-base text-base"
-          >
-            {children}
-          </PanelGroup.Panel>
-        </ThemeProvider>
-      </PortalTarget>
-    </div>
+    <ThemeProvider theme={theme}>
+      <PanelGroup.Panel
+        minSize={25}
+        className="scheme-container bg-base text-base"
+      >
+        {children}
+      </PanelGroup.Panel>
+    </ThemeProvider>
   );
 };

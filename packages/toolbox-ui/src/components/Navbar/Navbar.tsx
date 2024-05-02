@@ -7,7 +7,10 @@ type NavbarProps = ComponentPropsWithoutRef<"div">;
 export function Navbar({ className, children, ...props }: NavbarProps) {
   return (
     <div
-      className={clsx("h-10 w-full border-b border-base p-2", className)}
+      className={clsx(
+        "bg-base h-10 w-full border-b border-base p-2",
+        className,
+      )}
       {...props}
     >
       {children}

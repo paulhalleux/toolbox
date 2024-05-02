@@ -1,7 +1,7 @@
 import { tv, VariantProps } from "tailwind-variants";
 
 export const modalStyles = tv({
-  base: "bg-base border border-base rounded-lg text text-base w-full min-w-[min(100%,_400px)] max-h-[calc(100vh_-_48px)]",
+  base: "bg-base border border-base rounded-lg text text-base w-full min-w-[min(100%,_400px)] max-h-[calc(100vh_-_48px)] shadow-md",
   variants: {
     size: {
       small: "w-[400px]",
