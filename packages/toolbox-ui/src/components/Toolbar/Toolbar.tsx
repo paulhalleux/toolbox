@@ -9,7 +9,7 @@ export function Toolbar({ children, className, ...rest }: ToolbarProps) {
   return (
     <div
       className={clsx(
-        "w-10 border-r border-base p-1 flex flex-col gap-1",
+        "h-full w-10 border-r border-base p-1 flex flex-col gap-1",
         className,
       )}
       {...rest}

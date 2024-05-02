@@ -9,7 +9,25 @@ const meta: Meta<typeof Tooltip> = {
   title: "Tooltip",
   component: Tooltip,
   argTypes: {
-    placement: {},
+    placement: {
+      control: {
+        type: "select",
+      },
+      options: [
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "top-start",
+        "top-end",
+        "right-start",
+        "right-end",
+        "bottom-start",
+        "bottom-end",
+        "left-start",
+        "left-end",
+      ],
+    },
     open: { control: false },
     onOpenChange: { control: false },
     initialOpen: { control: false },

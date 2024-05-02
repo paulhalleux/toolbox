@@ -14,7 +14,23 @@ const meta: Meta<typeof Tree> = {
   ],
   title: "Tree",
   component: Tree,
-  argTypes: {},
+  argTypes: {
+    __internal_deepness: {
+      table: {
+        disable: true,
+      },
+    },
+    __internal_treeId: {
+      table: {
+        disable: true,
+      },
+    },
+    __internal_flatTree: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;

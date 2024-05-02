@@ -2,6 +2,7 @@ import { Button } from "./Button";
 import { Meta, StoryObj } from "@storybook/react";
 import { buttonStyles } from "./Button.styles";
 import { Center } from "../../../.storybook/decorators/center";
+import { PlusIcon } from "lucide-react";
 
 const meta: Meta<typeof Button> = {
   decorators: [Center],
@@ -24,5 +25,13 @@ export const Default: Story = {
   args: {
     children: "Button",
     size: "md",
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    children: <PlusIcon size={12} />,
+    size: "md",
+    icon: true,
   },
 };

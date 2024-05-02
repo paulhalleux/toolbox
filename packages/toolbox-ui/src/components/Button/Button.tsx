@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef } from "react";
 import { buttonStyles, ButtonVariant } from "./Button.styles";
+import { Text } from "../Text";
 
 type ButtonProps = Omit<
   ComponentPropsWithoutRef<"button">,
@@ -7,7 +8,21 @@ type ButtonProps = Omit<
 > &
   ButtonVariant;
 
-export function Button({ size, className, ...props }: ButtonProps) {
-  const classes = buttonStyles({ size, className });
-  return <button className={classes} {...props} />;
+export function Button({
+  size,
+  icon,
+  className,
+  children,
+  ...props
+}: ButtonProps) {
+  const classes = buttonStyles({ size, icon, className });
+  return (
+    <button className={classes} {...props}>
+      {typeof children === "string" ? (
+        <Text type="content-x-small">{children}</Text>
+      ) : (
+        children
+      )}
+    </button>
+  );
 }

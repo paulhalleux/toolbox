@@ -5,6 +5,8 @@
   "author": "HALLEUX, Paul <mail@paulhalleux.be>",
   "license": "MIT",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -18,6 +20,10 @@
     "build:css": "tailwindcss build src/index.css -o dist/styles.css",
     "dev": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react-resizable-panels": "^2.0.18",
+    "zustand": "^4.5.2"
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.13",
@@ -56,7 +62,8 @@
     "storybook": "^8.0.9",
     "tsup": "^8.0.2",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "zustand": "^4.5.2"
   },
   "eslintConfig": {
     "extends": [

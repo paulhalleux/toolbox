@@ -18,7 +18,6 @@ export function Handle({
   direction,
   ...rest
 }: Omit<PanelResizeHandleProps, "children"> & {
-  active?: boolean;
   showDragIndicator?: boolean;
   direction: "horizontal" | "vertical";
 }) {

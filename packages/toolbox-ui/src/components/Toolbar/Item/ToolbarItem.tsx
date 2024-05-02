@@ -5,6 +5,7 @@ import { Tooltip } from "../../Tooltip";
 
 type ToolbarItemProps = {
   label?: string;
+  active?: boolean;
 } & ComponentPropsWithoutRef<"button"> &
   ({ icon: LucideIcon } | PropsWithChildren<{ icon?: never }>);
 
@@ -13,6 +14,7 @@ export function ToolbarItem({
   children,
   label,
   className,
+  active,
   ...rest
 }: ToolbarItemProps) {
   return (
@@ -21,6 +23,9 @@ export function ToolbarItem({
         <button
           className={clsx(
             "h-8 w-8 rounded flex items-center justify-center hover:bg-secondary active:bg-active",
+            {
+              "!bg-active": active,
+            },
             className,
           )}
           aria-labelledby={label}

@@ -3,7 +3,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import { clsx } from "clsx";
 import { Text } from "../Text";
 
-type TreeNode = {
+export type TreeNode = {
   id: string;
   name: string;
   children?: TreeNode[];
@@ -99,6 +99,7 @@ export function Tree({
         const ChevronIcon = isExpanded ? ChevronDown : ChevronRight;
         return (
           <li
+            tabIndex={-1}
             key={node.id}
             onClick={onClick(node)}
             onDoubleClick={onToggle(node)}
@@ -111,7 +112,7 @@ export function Tree({
               data-next-item={getNextItem(node)?.id}
               data-prev-item={getPrevItem(node)?.id}
               className={clsx(
-                "flex items-center hover:bg-secondary outline-none border border-[transparent] focus-visible:border-primitive-blue-500",
+                "flex items-center hover:bg-secondary !outline-none border border-[transparent] focus-visible:border-primitive-blue-500",
                 {
                   "bg-secondary": selectedNodes?.includes(node.id),
                 },
@@ -122,7 +123,7 @@ export function Tree({
               }}
             >
               <div className="h-8 w-8 shrink-0">
-                {node.children && (
+                {node.children && node.children.length > 0 && (
                   <button
                     tabIndex={-1}
                     className="w-full h-full flex items-center justify-center"

@@ -7,3 +7,7 @@ export * from "./Tooltip";
 export * from "./Popover";
 export * from "./ThemeProvider";
 export * from "./Tree";
+export * from "./Navbar";
+export * from "./Modal";
+export * from "./Input";
+export * from "./AsChild";

@@ -14,7 +14,7 @@ export const WithColorScheme: Decorator = (Story, context) => {
         <SchemeContainer theme="light">
           <Story {...context} />
         </SchemeContainer>
-        <PanelGroup.Handle direction="horizontal" showDragIndicator active />
+        <PanelGroup.Handle direction="horizontal" showDragIndicator />
         <SchemeContainer theme="dark">
           <Story {...context} />
         </SchemeContainer>
@@ -35,7 +35,6 @@ const SchemeContainer = ({ children, theme }) => {
   return (
     <ThemeProvider theme={theme}>
       <PanelGroup.Panel
-        data-theme={theme}
         minSize={25}
         className="scheme-container bg-base text-base"
       >

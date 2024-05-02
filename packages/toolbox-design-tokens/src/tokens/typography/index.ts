@@ -53,7 +53,7 @@ export const typography = {
       $kind: DesignTokenKind.Typography,
       $value: {
         family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.4xl",
+        size: "$ref:primitive.fontSize.2xl",
         weight: "$ref:primitive.fontWeight.bold",
         lineHeight: "$ref:primitive.lineHeight.base",
       },
@@ -64,7 +64,7 @@ export const typography = {
       $kind: DesignTokenKind.Typography,
       $value: {
         family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.3xl",
+        size: "$ref:primitive.fontSize.xl",
         weight: "$ref:primitive.fontWeight.bold",
         lineHeight: "$ref:primitive.lineHeight.base",
       },
@@ -75,7 +75,7 @@ export const typography = {
       $kind: DesignTokenKind.Typography,
       $value: {
         family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.2xl",
+        size: "$ref:primitive.fontSize.lg",
         weight: "$ref:primitive.fontWeight.bold",
         lineHeight: "$ref:primitive.lineHeight.base",
       },
@@ -86,7 +86,7 @@ export const typography = {
       $kind: DesignTokenKind.Typography,
       $value: {
         family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.xl",
+        size: "$ref:primitive.fontSize.sm",
         weight: "$ref:primitive.fontWeight.bold",
         lineHeight: "$ref:primitive.lineHeight.base",
       },
@@ -97,7 +97,7 @@ export const typography = {
       $kind: DesignTokenKind.Typography,
       $value: {
         family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.lg",
+        size: "$ref:primitive.fontSize.md",
         weight: "$ref:primitive.fontWeight.bold",
         lineHeight: "$ref:primitive.lineHeight.base",
       },
@@ -108,7 +108,7 @@ export const typography = {
       $kind: DesignTokenKind.Typography,
       $value: {
         family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.md",
+        size: "$ref:primitive.fontSize.xs",
         weight: "$ref:primitive.fontWeight.bold",
         lineHeight: "$ref:primitive.lineHeight.base",
       },

@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef, ElementType, useState } from "react";
 import { textStyles, TextVariant } from "./Text.styles";
 import { clsx } from "clsx";
+import { AsChild } from "../AsChild";
 
 export const TypographyType = [
   "code",
@@ -25,6 +26,7 @@ type TextProps<Element extends ElementType> = Omit<
   editable?: boolean;
   onEdit?: (newValue: string) => void;
   editInputClassName?: string;
+  asChild?: boolean;
 } & TextVariant;
 
 export function Text<Element extends ElementType = "p">({
@@ -34,6 +36,7 @@ export function Text<Element extends ElementType = "p">({
   editable,
   editInputClassName,
   onEdit,
+  asChild,
   ...props
 }: TextProps<Element>) {
   const Component = as || "p";
@@ -47,6 +50,18 @@ export function Text<Element extends ElementType = "p">({
 
     return "";
   });
+
+  if (asChild)
+    return (
+      <AsChild
+        {...props}
+        className={classes}
+        style={{
+          font: `var(--typography-${type})`,
+          ...props.style,
+        }}
+      />
+    );
 
   if (typeof props.children !== "string" && editable) {
     throw new Error(
@@ -88,6 +103,7 @@ export function Text<Element extends ElementType = "p">({
       {...props}
       style={{
         font: `var(--typography-${type})`,
+        ...props.style,
       }}
     />
   );

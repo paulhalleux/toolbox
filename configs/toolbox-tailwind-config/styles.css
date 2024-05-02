@@ -161,12 +161,12 @@
   --typography-content-small: var(--primitive-font-weight-normal) var(--primitive-font-size-sm) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
   --typography-content-base: var(--primitive-font-weight-normal) var(--primitive-font-size-md) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
   --typography-content-large: var(--primitive-font-weight-normal) var(--primitive-font-size-lg) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
-  --typography-heading-h1: var(--primitive-font-weight-bold) var(--primitive-font-size-4xl) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
-  --typography-heading-h2: var(--primitive-font-weight-bold) var(--primitive-font-size-3xl) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
-  --typography-heading-h3: var(--primitive-font-weight-bold) var(--primitive-font-size-2xl) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
-  --typography-heading-h4: var(--primitive-font-weight-bold) var(--primitive-font-size-xl) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
-  --typography-heading-h5: var(--primitive-font-weight-bold) var(--primitive-font-size-lg) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
-  --typography-heading-h6: var(--primitive-font-weight-bold) var(--primitive-font-size-md) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
+  --typography-heading-h1: var(--primitive-font-weight-bold) var(--primitive-font-size-2xl) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
+  --typography-heading-h2: var(--primitive-font-weight-bold) var(--primitive-font-size-xl) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
+  --typography-heading-h3: var(--primitive-font-weight-bold) var(--primitive-font-size-lg) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
+  --typography-heading-h4: var(--primitive-font-weight-bold) var(--primitive-font-size-sm) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
+  --typography-heading-h5: var(--primitive-font-weight-bold) var(--primitive-font-size-md) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
+  --typography-heading-h6: var(--primitive-font-weight-bold) var(--primitive-font-size-xs) / var(--primitive-line-height-base) var(--primitive-font-family-sans);
   --typography-code: var(--primitive-font-weight-normal) var(--primitive-font-size-sm) / var(--primitive-line-height-base) var(--primitive-font-family-mono);
 }
 [data-theme="light"] {

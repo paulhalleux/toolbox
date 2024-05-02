@@ -12,7 +12,11 @@ type ThemeProviderProps = PropsWithChildren<ThemeContextType>;
 
 export function ThemeProvider({ children, ...value }: ThemeProviderProps) {
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>
+      <div data-theme={value.theme} className="contents">
+        {children}
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

@@ -1,1 +1,1 @@
-export { Tree } from "./Tree";
+export { Tree, type TreeNode } from "./Tree";
