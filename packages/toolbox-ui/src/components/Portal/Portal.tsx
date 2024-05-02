@@ -16,9 +16,9 @@ export function Portal({ children, target = document.body }: PortalProps) {
   return createPortal(children, portalRoot?.current ?? target);
 }
 
-const PortalTargetContext = createContext<RefObject<HTMLDivElement>>({
-  current: null,
-});
+const PortalTargetContext = createContext<RefObject<HTMLDivElement> | null>(
+  null,
+);
 
 export function PortalTarget({ children }: PropsWithChildren) {
   const containerRef = useRef<HTMLDivElement>(null);
