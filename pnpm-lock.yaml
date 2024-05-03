@@ -123,6 +123,9 @@ importers:
       '@storybook/theming':
         specifier: ^8.0.9
         version: 8.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@toolbox/tailwind-config':
+        specifier: workspace:*
+        version: link:../toolbox-tailwind-config
       '@types/node':
         specifier: ^20.12.7
         version: 20.12.7

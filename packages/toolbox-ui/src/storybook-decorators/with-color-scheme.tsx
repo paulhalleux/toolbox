@@ -38,7 +38,7 @@ const SchemeContainer = ({ children, theme }) => {
   return (
     <div ref={setContainerRef} className="contents">
       <ThemeProvider theme={theme} target={containerRef ?? undefined}>
-        <PanelGroup.Panel minSize={25} className="scheme-container bg-base">
+        <PanelGroup.Panel minSize={25} className="bg-base flex w-full h-full">
           {children}
         </PanelGroup.Panel>
       </ThemeProvider>

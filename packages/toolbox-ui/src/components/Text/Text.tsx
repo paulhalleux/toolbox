@@ -60,7 +60,7 @@ export function Text<Element extends ElementType = "p">({
     return (
       <input
         className={clsx(
-          "bg-default outline-none w-full rounded border border-primitive-blue-600 px-1.5 py-1",
+          "bg-base outline-none w-full rounded border border-focus px-1.5 py-1",
           classes,
           editInputClassName,
         )}
