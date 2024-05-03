@@ -1,7 +1,7 @@
 import { Tree } from "./Tree";
 import { Meta, StoryObj } from "@storybook/react";
-import { Center } from "../../../.storybook/decorators/center";
 import { useState } from "react";
+import { Center } from "@toolbox/storybook-config";
 
 const meta: Meta<typeof Tree> = {
   decorators: [

@@ -3,7 +3,8 @@ import { inputStyles, InputVariant } from "./Input.styles";
 import { Text } from "../Text";
 import { clsx } from "clsx";
 
-type InputProps = ComponentPropsWithoutRef<"input"> & InputVariant;
+type InputProps = Omit<ComponentPropsWithoutRef<"input">, keyof InputVariant> &
+  InputVariant;
 
 export function Input({ className, size, disabled, ...props }: InputProps) {
   const classes = inputStyles({ size, disabled, className });

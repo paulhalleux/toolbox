@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import { Meta, StoryObj } from "@storybook/react";
+import { Center } from "@toolbox/storybook-config";
 import { buttonStyles } from "./Button.styles";
-import { Center } from "../../../.storybook/decorators/center";
 import { PlusIcon } from "lucide-react";
 
 const meta: Meta<typeof Button> = {

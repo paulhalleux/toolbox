@@ -1,7 +1,7 @@
 import { Badge } from "./Badge";
 import { Meta, StoryObj } from "@storybook/react";
 import { badgeStyles } from "./Badge.styles";
-import { Center } from "../../../.storybook/decorators/center";
+import { Center } from "@toolbox/storybook-config";
 
 const meta: Meta<typeof Badge> = {
   decorators: [Center],

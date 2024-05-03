@@ -1,6 +1,6 @@
 import { Form } from "./Form";
 import { Meta, StoryObj } from "@storybook/react";
-import { Center } from "../../../.storybook/decorators/center";
+import { Center } from "@toolbox/storybook-config";
 
 const meta: Meta<typeof Form> = {
   decorators: [Center],

@@ -1,10 +1,10 @@
 import { Modal } from "./Modal";
 import { Meta, StoryObj } from "@storybook/react";
-import { Center } from "../../../.storybook/decorators/center";
 import { useState } from "react";
 import { Button } from "../Button";
 import { Text } from "../Text";
 import { modalStyles } from "./Modal.styles";
+import { Center } from "@toolbox/storybook-config";
 
 const meta: Meta<typeof Modal> = {
   decorators: [Center],

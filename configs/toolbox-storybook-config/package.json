@@ -1,0 +1,41 @@
+{
+  "name": "@toolbox/storybook-config",
+  "version": "1.0.0",
+  "description": "A Storybook configuration for Toolbox projects",
+  "author": "HALLEUX, Paul <mail@paulhalleux.be>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "toolbox-storybook": "./bin.js"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist"
+  },
+  "devDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "@storybook/addon-essentials": "^8.0.9",
+    "@storybook/addon-interactions": "^8.0.9",
+    "@storybook/addon-links": "^8.0.9",
+    "@storybook/addon-onboarding": "^8.0.9",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/blocks": "^8.0.9",
+    "@storybook/manager-api": "^8.0.9",
+    "@storybook/react": "^8.0.9",
+    "@storybook/react-vite": "^8.0.9",
+    "@storybook/test": "^8.0.9",
+    "@storybook/theming": "^8.0.9",
+    "storybook": "^8.0.9",
+    "@toolbox/tailwind-config": "workspace:*",
+    "@toolbox/typescript-config": "workspace:*",
+    "@toolbox/ui": "workspace:*",
+    "@types/node": "^20.12.7",
+    "tailwindcss": "^3.4.3"
+  }
+}

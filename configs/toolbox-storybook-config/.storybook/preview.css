@@ -1,3 +1,6 @@
+@import "@toolbox/tailwind-config/styles.css";
+@import "@toolbox/ui/dist/styles.css";
+
 .sb-main-padded {
   padding: 0 !important;
   height: 100vh !important;

@@ -7,6 +7,7 @@ personal use, educational purposes, or for fun.
 
 - Configs
   - `toolbox-eslint-config`: An ESLint configuration that I use for my projects.
+  - `toolbox-storybook-config`: A Storybook configuration that I use for my projects.
   - `toolbox-tailwind-config`: A Tailwind CSS configuration that I use for my projects.
   - `toolbox-typescript-config`: A TypeScript configuration that I use for my projects.
 - Libraries

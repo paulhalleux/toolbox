@@ -1,6 +1,6 @@
 import { Decorator } from "@storybook/react";
-import { PanelGroup, PortalTarget, ThemeProvider } from "../../src";
 import { useState } from "react";
+import { PanelGroup, PortalTarget, ThemeProvider } from "@toolbox/ui";
 
 export const WithColorScheme: Decorator = (Story, context) => {
   const { scheme } = context.globals;

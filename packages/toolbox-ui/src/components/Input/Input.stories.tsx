@@ -1,7 +1,7 @@
 import { Input } from "./Input";
 import { Meta, StoryObj } from "@storybook/react";
-import { Center } from "../../../.storybook/decorators/center";
 import { inputStyles } from "./Input.styles";
+import { Center } from "@toolbox/storybook-config";
 
 const meta: Meta<typeof Input> = {
   decorators: [(Story) => <div className="w-72">{Story()}</div>, Center],

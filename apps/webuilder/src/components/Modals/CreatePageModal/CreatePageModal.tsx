@@ -1,4 +1,4 @@
-import { BaseModalProps, Button, Modal, Text } from "@toolbox/ui";
+import { BaseModalProps, Button, Input, Modal, Text } from "@toolbox/ui";
 import { useContentStore } from "../../../state/content-store";
 
 export function CreatePageModal({ open, onClose }: BaseModalProps) {
@@ -37,46 +37,30 @@ export function CreatePageModal({ open, onClose }: BaseModalProps) {
       <form
         onSubmit={onSubmit}
         id="form"
-        className="w-full flex flex-col gap-2"
+        className="w-full flex flex-col gap-3"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-1.5">
           <Text as="label" htmlFor="name" type="content-x-small">
             Name
           </Text>
           <Text type="content-x-small" className="grow">
-            <input
-              autoFocus
-              type="text"
-              id="name"
-              name="name"
-              className="w-full border border-base outline-none px-1 rounded h-6"
-            />
+            <Input autoFocus type="text" id="name" name="name" />
           </Text>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-1.5">
           <Text as="label" htmlFor="route" type="content-x-small">
             Route
           </Text>
           <Text type="content-x-small" className="grow">
-            <input
-              type="text"
-              id="route"
-              name="route"
-              className="w-full border border-base outline-none px-1 rounded h-6"
-            />
+            <Input type="text" id="route" name="route" />
           </Text>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-1.5">
           <Text as="label" htmlFor="route" type="content-x-small">
             Parent
           </Text>
           <Text type="content-x-small" className="grow">
-            <input
-              type="text"
-              id="route"
-              name="route"
-              className="w-full border border-base outline-none px-1 rounded h-6"
-            />
+            <Input type="text" id="route" name="route" />
           </Text>
         </div>
       </form>

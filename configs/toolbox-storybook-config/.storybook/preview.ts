@@ -1,8 +1,8 @@
 import type { Preview } from "@storybook/react";
-import { WithColorScheme } from "./decorators/with-color-scheme";
 
-import "../src/index.css";
 import "./preview.css";
+
+import { WithColorScheme } from "../src";
 
 const preview: Preview = {
   decorators: [WithColorScheme],

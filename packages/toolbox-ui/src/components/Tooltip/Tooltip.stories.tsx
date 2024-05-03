@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Tooltip } from "./Tooltip";
 import { Button } from "../Button";
-import { Center } from "../../../.storybook/decorators/center";
+import { Center } from "@toolbox/storybook-config";
 
 const meta: Meta<typeof Tooltip> = {
   decorators: [Center],
