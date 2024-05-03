@@ -133,7 +133,7 @@ export function Tree({
                   </button>
                 )}
               </div>
-              <Text type="content-x-small" className="select-none">
+              <Text type="text-xs" className="select-none">
                 {node.name}
               </Text>
             </div>

@@ -9,7 +9,7 @@ export function Badge({ type, className, children, ...props }: BadgeProps) {
   const classes = badgeStyles({ type, className });
   return (
     <span className={classes} {...props}>
-      <Text as="span" type="content-x-small">
+      <Text as="span" type="text-xs">
         {children}
       </Text>
     </span>

@@ -7,7 +7,8 @@
   "main": "tailwind-config.ts",
   "exports": {
     ".": "./tailwind-config.ts",
-    "./styles.css": "./styles.css"
+    "./styles.css": "./styles.css",
+    "./base.css": "./base.css"
   },
   "scripts": {
     "build:css": "tsx generate-css.ts"

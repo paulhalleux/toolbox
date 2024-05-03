@@ -19,7 +19,7 @@ export function Button({
   return (
     <button className={classes} {...props}>
       {typeof children === "string" ? (
-        <Text type="content-x-small">{children}</Text>
+        <Text type="text-xs">{children}</Text>
       ) : (
         children
       )}

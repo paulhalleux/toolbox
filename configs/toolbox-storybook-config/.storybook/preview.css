@@ -1,5 +1,10 @@
-@import "@toolbox/tailwind-config/styles.css";
-@import "@toolbox/ui/dist/styles.css";
+@import "@toolbox/tailwind-config/base.css";
+
+#storybook-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
 .sb-main-padded {
   padding: 0 !important;

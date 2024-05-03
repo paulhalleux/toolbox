@@ -2,26 +2,13 @@ import { ComponentPropsWithoutRef, ElementType, useState } from "react";
 import { textStyles, TextVariant } from "./Text.styles";
 import { clsx } from "clsx";
 import { AsChild } from "../AsChild";
-
-export const TypographyType = [
-  "code",
-  "content-x-small",
-  "content-small",
-  "content-base",
-  "content-large",
-  "heading-h1",
-  "heading-h2",
-  "heading-h3",
-  "heading-h4",
-  "heading-h5",
-  "heading-h6",
-] as const;
+import { designTokens } from "@toolbox/design-tokens";
 
 type TextProps<Element extends ElementType> = Omit<
   ComponentPropsWithoutRef<Element>,
   keyof TextVariant
 > & {
-  type?: (typeof TypographyType)[number];
+  type?: keyof typeof designTokens.typography;
   as?: Element;
   editable?: boolean;
   onEdit?: (newValue: string) => void;
@@ -31,7 +18,7 @@ type TextProps<Element extends ElementType> = Omit<
 
 export function Text<Element extends ElementType = "p">({
   className,
-  type = "content-base",
+  type = "text-xs",
   as,
   editable,
   editInputClassName,
@@ -73,7 +60,7 @@ export function Text<Element extends ElementType = "p">({
     return (
       <input
         className={clsx(
-          "bg-base outline-none w-full rounded border border-primitive-blue-600 px-1.5 py-1",
+          "bg-default outline-none w-full rounded border border-primitive-blue-600 px-1.5 py-1",
           classes,
           editInputClassName,
         )}
@@ -93,7 +80,7 @@ export function Text<Element extends ElementType = "p">({
 
   return (
     <Component
-      className={clsx("text text-base", classes)}
+      className={classes}
       onDoubleClick={(event) => {
         if (!editable) return;
         event.stopPropagation();

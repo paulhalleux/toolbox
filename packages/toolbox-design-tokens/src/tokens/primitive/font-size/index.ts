@@ -1,4 +1,4 @@
-import { DesignTokenKind, DesignTokenGroup } from "../../../types";
+import { DesignTokenGroup, DesignTokenKind } from "../../../types";
 
 export const fontSize = {
   xs: {
@@ -31,22 +31,40 @@ export const fontSize = {
     $value: 20,
     $version: "1.0.0",
   },
-  "2xl": {
+  "display-xs": {
     $kind: DesignTokenKind.Size,
-    $name: "primitive-font-size-2xl",
+    $name: "primitive-font-size-display-xs",
     $value: 24,
     $version: "1.0.0",
   },
-  "3xl": {
+  "display-sm": {
     $kind: DesignTokenKind.Size,
-    $name: "primitive-font-size-3xl",
-    $value: 32,
+    $name: "primitive-font-size-display-sm",
+    $value: 30,
     $version: "1.0.0",
   },
-  "4xl": {
+  "display-md": {
     $kind: DesignTokenKind.Size,
-    $name: "primitive-font-size-4xl",
-    $value: 40,
+    $name: "primitive-font-size-display-md",
+    $value: 36,
+    $version: "1.0.0",
+  },
+  "display-lg": {
+    $kind: DesignTokenKind.Size,
+    $name: "primitive-font-size-display-lg",
+    $value: 48,
+    $version: "1.0.0",
+  },
+  "display-xl": {
+    $kind: DesignTokenKind.Size,
+    $name: "primitive-font-size-display-xl",
+    $value: 60,
+    $version: "1.0.0",
+  },
+  "display-xxl": {
+    $kind: DesignTokenKind.Size,
+    $name: "primitive-font-size-display-xxl",
+    $value: 72,
     $version: "1.0.0",
   },
 } satisfies DesignTokenGroup;

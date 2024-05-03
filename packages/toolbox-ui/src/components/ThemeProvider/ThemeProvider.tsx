@@ -22,6 +22,9 @@ export function ThemeProvider({
   // update html data-theme attribute
   useEffect(() => {
     (target ?? document.body).dataset.theme = value.theme;
+    return () => {
+      delete (target ?? document.body).dataset.theme;
+    };
   }, [target, value.theme]);
 
   return (

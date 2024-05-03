@@ -11,17 +11,14 @@ export default {
     },
     extend: {
       backgroundColor: tokenLibrary.toTailwindCSSGroup(
-        (library) => library.colors.container,
+        (library) => library.colors.surface,
       ),
-      textColor: tokenLibrary.toTailwindCSSGroup(
-        (library) => library.colors.text,
-      ),
+      textColor: {
+        base: tokenLibrary.toTailwindCSS("colors.reverse"),
+      },
       borderColor: tokenLibrary.toTailwindCSSGroup(
         (library) => library.colors.border,
       ),
-      ringColor: {
-        base: tokenLibrary.toTailwindCSS("colors.focus"),
-      },
     },
   },
 } as PresetsConfig;

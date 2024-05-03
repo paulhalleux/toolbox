@@ -1,7 +1,7 @@
 import { tv, VariantProps } from "tailwind-variants";
 
 export const inputStyles = tv({
-  base: "w-full items-center justify-center rounded border border-base bg-base focus:outline-none focus:border-primitive-blue-600",
+  base: "w-full items-center justify-center rounded border border-base bg-base focus:outline-none focus:border-focus",
   variants: {
     size: {
       small: "h-6 px-1",

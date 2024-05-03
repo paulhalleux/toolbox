@@ -9,7 +9,7 @@ type InputProps = Omit<ComponentPropsWithoutRef<"input">, keyof InputVariant> &
 export function Input({ className, size, disabled, ...props }: InputProps) {
   const classes = inputStyles({ size, disabled, className });
   return (
-    <Text asChild type="content-x-small">
+    <Text asChild type="text-xs">
       <input
         className={clsx(classes, "w-full")}
         disabled={disabled}

@@ -1,7 +1,8 @@
-import { Text, TypographyType } from "./Text";
+import { Text } from "./Text";
 import { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "../Badge";
 import { useState } from "react";
+import { designTokens } from "@toolbox/design-tokens";
 
 const meta: Meta<typeof Text> = {
   title: "Text",
@@ -16,10 +17,10 @@ export const Default: Story = {
   render: (args) => {
     return (
       <div className="flex flex-col gap-24 p-16 overflow-auto">
-        {TypographyType.map((variant) => (
+        {Object.keys(designTokens.typography).map((variant) => (
           <div className="flex items-start flex-col gap-2">
             <Badge>{variant}</Badge>
-            <Text key={variant} type={variant} {...args}>
+            <Text key={variant} type={variant as any} {...args}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Text>
           </div>

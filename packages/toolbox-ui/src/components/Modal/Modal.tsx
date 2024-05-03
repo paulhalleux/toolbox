@@ -2,7 +2,7 @@ import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { modalStyles, ModalVariant } from "./Modal.styles";
 import { clsx } from "clsx";
-import { Portal } from "../Portal/Portal";
+import { Portal } from "../Portal";
 
 type ModalProps = PropsWithChildren<{
   open: boolean;

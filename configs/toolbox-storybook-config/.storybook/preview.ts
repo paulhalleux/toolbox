@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 
+import "@toolbox/tailwind-config/styles.css";
 import "./preview.css";
 
 import { WithColorScheme } from "../src";

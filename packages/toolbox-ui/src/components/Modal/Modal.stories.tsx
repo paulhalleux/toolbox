@@ -5,6 +5,7 @@ import { Button } from "../Button";
 import { Text } from "../Text";
 import { modalStyles } from "./Modal.styles";
 import { Center } from "@toolbox/storybook-config";
+import { PortalTarget } from "../Portal";
 
 const meta: Meta<typeof Modal> = {
   decorators: [Center],
@@ -38,7 +39,7 @@ export const Default: Story = {
     const [open, setOpen] = useState(false);
 
     return (
-      <div>
+      <PortalTarget>
         <Button onClick={() => setOpen(true)}>Open Modal</Button>
         <Modal
           open={open}
@@ -53,7 +54,7 @@ export const Default: Story = {
             <Button onClick={() => setOpen(false)}>Save</Button>
           </div>
         </Modal>
-      </div>
+      </PortalTarget>
     );
   },
 };

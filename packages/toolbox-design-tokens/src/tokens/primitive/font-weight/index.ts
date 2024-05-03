@@ -1,27 +1,9 @@
-import { DesignTokenKind, DesignTokenGroup } from "../../../types";
+import { DesignTokenGroup, DesignTokenKind } from "../../../types";
 
 export const fontWeight = {
-  thin: {
+  regular: {
     $kind: DesignTokenKind.FontWeight,
-    $name: "primitive-font-weight-thin",
-    $value: 100,
-    $version: "1.0.0",
-  },
-  extralight: {
-    $kind: DesignTokenKind.FontWeight,
-    $name: "primitive-font-weight-extralight",
-    $value: 200,
-    $version: "1.0.0",
-  },
-  light: {
-    $kind: DesignTokenKind.FontWeight,
-    $name: "primitive-font-weight-light",
-    $value: 300,
-    $version: "1.0.0",
-  },
-  normal: {
-    $kind: DesignTokenKind.FontWeight,
-    $name: "primitive-font-weight-normal",
+    $name: "primitive-font-weight-regular",
     $value: 400,
     $version: "1.0.0",
   },
@@ -41,18 +23,6 @@ export const fontWeight = {
     $kind: DesignTokenKind.FontWeight,
     $name: "primitive-font-weight-bold",
     $value: 700,
-    $version: "1.0.0",
-  },
-  extrabold: {
-    $kind: DesignTokenKind.FontWeight,
-    $name: "primitive-font-weight-extrabold",
-    $value: 800,
-    $version: "1.0.0",
-  },
-  black: {
-    $kind: DesignTokenKind.FontWeight,
-    $name: "primitive-font-weight-black",
-    $value: 900,
     $version: "1.0.0",
   },
 } satisfies DesignTokenGroup;

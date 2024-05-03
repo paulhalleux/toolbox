@@ -2,129 +2,125 @@ import { DesignTokenGroup, DesignTokenKind } from "../../types";
 import { ReferencableDesignTokens } from "../primitive";
 
 export const typography = {
-  content: {
-    "x-small": {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.xs",
-        weight: "$ref:primitive.fontWeight.normal",
-        lineHeight: "$ref:primitive.lineHeight.none",
-      },
-      $name: "typography-content-x-small",
-      $version: "1.0.0",
-    },
-    small: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.sm",
-        weight: "$ref:primitive.fontWeight.normal",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-content-small",
-      $version: "1.0.0",
-    },
-    base: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.md",
-        weight: "$ref:primitive.fontWeight.normal",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-content-base",
-      $version: "1.0.0",
-    },
-    large: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.lg",
-        weight: "$ref:primitive.fontWeight.normal",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-content-large",
-      $version: "1.0.0",
-    },
-  },
-  heading: {
-    h1: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.2xl",
-        weight: "$ref:primitive.fontWeight.bold",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-heading-h1",
-      $version: "1.0.0",
-    },
-    h2: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.xl",
-        weight: "$ref:primitive.fontWeight.bold",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-heading-h2",
-      $version: "1.0.0",
-    },
-    h3: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.lg",
-        weight: "$ref:primitive.fontWeight.bold",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-heading-h3",
-      $version: "1.0.0",
-    },
-    h4: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.sm",
-        weight: "$ref:primitive.fontWeight.bold",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-heading-h4",
-      $version: "1.0.0",
-    },
-    h5: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.md",
-        weight: "$ref:primitive.fontWeight.bold",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-heading-h5",
-      $version: "1.0.0",
-    },
-    h6: {
-      $kind: DesignTokenKind.Typography,
-      $value: {
-        family: "$ref:primitive.fontFamily.sans",
-        size: "$ref:primitive.fontSize.xs",
-        weight: "$ref:primitive.fontWeight.bold",
-        lineHeight: "$ref:primitive.lineHeight.base",
-      },
-      $name: "typography-heading-h6",
-      $version: "1.0.0",
-    },
-  },
-  code: {
+  "text-xs": {
     $kind: DesignTokenKind.Typography,
     $value: {
-      family: "$ref:primitive.fontFamily.mono",
-      size: "$ref:primitive.fontSize.sm",
-      weight: "$ref:primitive.fontWeight.normal",
-      lineHeight: "$ref:primitive.lineHeight.base",
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.xs",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.xs",
     },
-    $name: "typography-code",
+    $name: "typography-text-xs",
+    $version: "1.0.0",
+  },
+  "text-sm": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.sm",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.sm",
+    },
+    $name: "typography-text-sm",
+    $version: "1.0.0",
+  },
+  "text-md": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.md",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.md",
+    },
+    $name: "typography-text-md",
+    $version: "1.0.0",
+  },
+  "text-lg": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.lg",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.lg",
+    },
+    $name: "typography-text-lg",
+    $version: "1.0.0",
+  },
+  "text-xl": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.xl",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.xl",
+    },
+    $name: "typography-text-xl",
+    $version: "1.0.0",
+  },
+  "display-xs": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.display-xs",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.display-xs",
+    },
+    $name: "typography-display-xs",
+    $version: "1.0.0",
+  },
+  "display-sm": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.display-sm",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.display-sm",
+    },
+    $name: "typography-display-sm",
+    $version: "1.0.0",
+  },
+  "display-md": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.display-md",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.display-md",
+    },
+    $name: "typography-display-md",
+    $version: "1.0.0",
+  },
+  "display-lg": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.display-lg",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.display-lg",
+    },
+    $name: "typography-display-lg",
+    $version: "1.0.0",
+  },
+  "display-xl": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.display-xl",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.display-xl",
+    },
+    $name: "typography-display-xl",
+    $version: "1.0.0",
+  },
+  "display-xxl": {
+    $kind: DesignTokenKind.Typography,
+    $value: {
+      family: "$ref:primitive.fontFamily.sans",
+      size: "$ref:primitive.fontSize.display-xxl",
+      weight: "$ref:primitive.fontWeight.regular",
+      lineHeight: "$ref:primitive.lineHeight.display-xxl",
+    },
+    $name: "typography-display-xxl",
     $version: "1.0.0",
   },
 } satisfies DesignTokenGroup<ReferencableDesignTokens>;

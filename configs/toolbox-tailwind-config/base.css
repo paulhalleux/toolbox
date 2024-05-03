@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html, body, #root {
-  background: var(--color-container-base);
-  min-height: 100%;
+  background: var(--color-surface-base);
+  min-height: 100vh;
 }
 
 * {
-  font: var(--typography-content-base);
+  font: var(--typography-text-sm);
   color: var(--color-text-base);
   padding: 0;
   margin: 0;

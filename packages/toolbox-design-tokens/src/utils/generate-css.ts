@@ -1,4 +1,4 @@
-import { ThemedVariableList, CssVariable } from "./themed-variable-list";
+import { CssVariable, ThemedVariableList } from "./themed-variable-list";
 import { DesignToken, DesignTokenKind } from "../types";
 import { TokenLibrary } from "../token-library";
 
@@ -63,7 +63,7 @@ function getTokenValue(
   if (typeof value === "string" && value.startsWith("$ref:")) {
     const ref = value.replace("$ref:", "");
     const token = flattenedTokens[ref];
-    if (!token || !("$value" in token)) {
+    if (!token || !("$value" in token || "$themeValues" in token)) {
       throw new Error(`Token ${ref} not found`);
     }
     return "var(--" + token.$name + ")";

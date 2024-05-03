@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^8.0.9",
+    "@toolbox/design-tokens": "workspace:*",
     "@toolbox/eslint-config": "workspace:*",
     "@toolbox/storybook-config": "workspace:*",
     "@toolbox/tailwind-config": "workspace:*",

@@ -3,6 +3,7 @@ import { type Meta, type StoryObj } from "@storybook/react";
 import { Tooltip } from "./Tooltip";
 import { Button } from "../Button";
 import { Center } from "@toolbox/storybook-config";
+import { PortalTarget } from "../Portal";
 
 const meta: Meta<typeof Tooltip> = {
   decorators: [Center],
@@ -42,11 +43,13 @@ export const Default: Story = {
     placement: "top",
   },
   render: ({ placement }) => (
-    <Tooltip placement={placement}>
-      <Tooltip.Trigger>
-        <Button>Hover me</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content>Tooltip content</Tooltip.Content>
-    </Tooltip>
+    <PortalTarget>
+      <Tooltip placement={placement}>
+        <Tooltip.Trigger>
+          <Button>Hover me</Button>
+        </Tooltip.Trigger>
+        <Tooltip.Content>Tooltip content</Tooltip.Content>
+      </Tooltip>
+    </PortalTarget>
   ),
 };

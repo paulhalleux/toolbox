@@ -2,49 +2,60 @@ import { DesignTokenGroup, DesignTokenKind } from "../../types";
 import { ReferencableDesignTokens } from "../primitive";
 
 export const colors = {
-  focus: {
+  base: {
     $kind: DesignTokenKind.Color,
-    $name: "color-focus",
+    $name: "color-base",
     $themeValues: {
-      light: "$ref:primitive.colors.blue.500",
-      dark: "$ref:primitive.colors.blue.500",
+      light: "$ref:primitive.colors.white",
+      dark: "$ref:primitive.colors.gray.900",
     },
     $version: "1.0.0",
   },
-  container: {
+  reverse: {
+    $kind: DesignTokenKind.Color,
+    $name: "color-reverse",
+    $themeValues: {
+      light: "$ref:primitive.colors.gray.900",
+      dark: "$ref:primitive.colors.white",
+    },
+    $version: "1.0.0",
+  },
+  border: {
     base: {
       $kind: DesignTokenKind.Color,
-      $name: "color-container-base",
+      $name: "color-border-base",
+      $themeValues: {
+        light: "$ref:primitive.colors.gray.300",
+        dark: "$ref:primitive.colors.gray.700",
+      },
+      $version: "1.0.0",
+    },
+    focus: {
+      $kind: DesignTokenKind.Color,
+      $name: "color-border-focus",
+      $themeValues: {
+        light: "$ref:primitive.colors.indigo.500",
+        dark: "$ref:primitive.colors.indigo.300",
+      },
+      $version: "1.0.0",
+    },
+  },
+  surface: {
+    base: {
+      $kind: DesignTokenKind.Color,
+      $name: "color-surface-base",
       $themeValues: {
         light: "$ref:primitive.colors.white",
-        dark: "$ref:primitive.colors.zinc.900",
+        dark: "$ref:primitive.colors.gray.900",
       },
       $version: "1.0.0",
     },
     secondary: {
       $kind: DesignTokenKind.Color,
-      $name: "color-container-secondary",
+      $name: "color-surface-secondary",
       $themeValues: {
-        light: "$ref:primitive.colors.zinc.100",
-        dark: "$ref:primitive.colors.zinc.800",
-      },
-      $version: "1.0.0",
-    },
-    active: {
-      $kind: DesignTokenKind.Color,
-      $name: "color-container-active",
-      $themeValues: {
-        light: "$ref:primitive.colors.zinc.200",
-        dark: "$ref:primitive.colors.zinc.700",
-      },
-      $version: "1.0.0",
-    },
-    hover: {
-      $kind: DesignTokenKind.Color,
-      $name: "color-container-hover",
-      $themeValues: {
-        light: "$ref:primitive.colors.white",
-        dark: "$ref:primitive.colors.zinc.900",
+        light: "$ref:primitive.colors.gray.050",
+        dark: "$ref:primitive.colors.gray.800",
       },
       $version: "1.0.0",
     },
@@ -54,28 +65,17 @@ export const colors = {
       $kind: DesignTokenKind.Color,
       $name: "color-text-base",
       $themeValues: {
-        light: "$ref:primitive.colors.black",
+        light: "$ref:primitive.colors.gray.900",
         dark: "$ref:primitive.colors.white",
-      },
-      $version: "1.0.0",
-    },
-  },
-  border: {
-    base: {
-      $kind: DesignTokenKind.Color,
-      $name: "color-border-base",
-      $themeValues: {
-        light: "$ref:primitive.colors.zinc.300",
-        dark: "$ref:primitive.colors.zinc.700",
       },
       $version: "1.0.0",
     },
     secondary: {
       $kind: DesignTokenKind.Color,
-      $name: "color-border-secondary",
+      $name: "color-text-secondary",
       $themeValues: {
-        light: "$ref:primitive.colors.zinc.400",
-        dark: "$ref:primitive.colors.zinc.600",
+        light: "$ref:primitive.colors.gray.500",
+        dark: "$ref:primitive.colors.gray.400",
       },
       $version: "1.0.0",
     },

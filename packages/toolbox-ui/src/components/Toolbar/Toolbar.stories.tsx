@@ -6,6 +6,7 @@ import {
   SettingsIcon,
   UserIcon,
 } from "lucide-react";
+import { PortalTarget } from "../Portal";
 
 const meta: Meta<typeof Toolbar> = {
   title: "Toolbar",
@@ -17,6 +18,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  decorators: [
+    (Story) => (
+      <PortalTarget>
+        <Story />
+      </PortalTarget>
+    ),
+  ],
   args: {
     children: [
       <Toolbar.Item key="1" icon={LayersIcon} label="Item1" />,
