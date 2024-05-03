@@ -1,7 +1,10 @@
 import { Tree } from "./Tree";
 import { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Center } from "@toolbox/storybook-config";
+import {
+  WithCenteredContent,
+  WithColorScheme,
+} from "../../storybook-decorators";
 
 const meta: Meta<typeof Tree> = {
   decorators: [
@@ -10,7 +13,8 @@ const meta: Meta<typeof Tree> = {
         <Story />
       </div>
     ),
-    Center,
+    WithCenteredContent,
+    WithColorScheme,
   ],
   title: "Tree",
   component: Tree,

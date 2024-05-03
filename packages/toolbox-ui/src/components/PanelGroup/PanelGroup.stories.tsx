@@ -1,7 +1,9 @@
 import { PanelGroup } from "./PanelGroup";
 import { Meta, StoryObj } from "@storybook/react";
+import { WithColorScheme } from "../../storybook-decorators";
 
 const meta: Meta<typeof PanelGroup> = {
+  decorators: [WithColorScheme],
   title: "PanelGroup",
   component: PanelGroup,
 };

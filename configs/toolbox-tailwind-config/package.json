@@ -11,7 +11,7 @@
     "./base.css": "./base.css"
   },
   "scripts": {
-    "build:css": "tsx generate-css.ts"
+    "build": "tsx generate-css.ts"
   },
   "dependencies": {
     "@toolbox/design-tokens": "workspace:*",

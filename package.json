@@ -2,6 +2,9 @@
   "name": "root",
   "description": "Toolbox is a collection of tools for facilitating the life.",
   "private": true,
+  "scripts": {
+    "build": "lerna run build"
+  },
   "devDependencies": {
     "lerna": "^6.6.2"
   }

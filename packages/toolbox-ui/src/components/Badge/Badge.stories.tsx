@@ -1,10 +1,13 @@
 import { Badge } from "./Badge";
 import { Meta, StoryObj } from "@storybook/react";
 import { badgeStyles } from "./Badge.styles";
-import { Center } from "@toolbox/storybook-config";
+import {
+  WithCenteredContent,
+  WithColorScheme,
+} from "../../storybook-decorators";
 
 const meta: Meta<typeof Badge> = {
-  decorators: [Center],
+  decorators: [WithCenteredContent, WithColorScheme],
   title: "Badge",
   component: Badge,
   argTypes: {

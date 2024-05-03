@@ -7,8 +7,10 @@ import {
   UserIcon,
 } from "lucide-react";
 import { PortalTarget } from "../Portal";
+import { WithColorScheme } from "../../storybook-decorators";
 
 const meta: Meta<typeof Toolbar> = {
+  decorators: [WithColorScheme],
   title: "Toolbar",
   component: Toolbar,
   argTypes: {},

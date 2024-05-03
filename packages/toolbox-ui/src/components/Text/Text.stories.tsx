@@ -3,8 +3,10 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "../Badge";
 import { useState } from "react";
 import { designTokens } from "@toolbox/design-tokens";
+import { WithColorScheme } from "../../storybook-decorators";
 
 const meta: Meta<typeof Text> = {
+  decorators: [WithColorScheme],
   title: "Text",
   component: Text,
   argTypes: {},

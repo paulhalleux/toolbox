@@ -12,9 +12,6 @@
   "bin": {
     "toolbox-storybook": "./bin.js"
   },
-  "scripts": {
-    "build": "tsc --outDir dist"
-  },
   "devDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -31,11 +28,8 @@
     "@storybook/react-vite": "^8.0.9",
     "@storybook/test": "^8.0.9",
     "@storybook/theming": "^8.0.9",
-    "storybook": "^8.0.9",
-    "@toolbox/tailwind-config": "workspace:*",
-    "@toolbox/typescript-config": "workspace:*",
-    "@toolbox/ui": "workspace:*",
     "@types/node": "^20.12.7",
+    "storybook": "^8.0.9",
     "tailwindcss": "^3.4.3"
   }
 }

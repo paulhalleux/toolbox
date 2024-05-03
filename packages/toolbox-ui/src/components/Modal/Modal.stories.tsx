@@ -4,11 +4,14 @@ import { useState } from "react";
 import { Button } from "../Button";
 import { Text } from "../Text";
 import { modalStyles } from "./Modal.styles";
-import { Center } from "@toolbox/storybook-config";
 import { PortalTarget } from "../Portal";
+import {
+  WithCenteredContent,
+  WithColorScheme,
+} from "../../storybook-decorators";
 
 const meta: Meta<typeof Modal> = {
-  decorators: [Center],
+  decorators: [WithCenteredContent, WithColorScheme],
   title: "Modal",
   component: Modal,
   argTypes: {

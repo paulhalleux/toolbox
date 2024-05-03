@@ -1,11 +1,14 @@
 import { Button } from "./Button";
 import { Meta, StoryObj } from "@storybook/react";
-import { Center } from "@toolbox/storybook-config";
 import { buttonStyles } from "./Button.styles";
 import { PlusIcon } from "lucide-react";
+import {
+  WithCenteredContent,
+  WithColorScheme,
+} from "../../storybook-decorators";
 
 const meta: Meta<typeof Button> = {
-  decorators: [Center],
+  decorators: [WithCenteredContent, WithColorScheme],
   title: "Button",
   component: Button,
   argTypes: {
