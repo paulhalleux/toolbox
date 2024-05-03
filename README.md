@@ -3,6 +3,8 @@
 Toolbox is a collection of tools and libraries that I have written either for 
 personal use, educational purposes, or for fun.
 
+[![.github/workflows/build.yml](https://github.com/paulhalleux/toolbox/actions/workflows/build.yml/badge.svg)](https://github.com/paulhalleux/toolbox/actions/workflows/build.yml)
+
 ## Tools
 
 - Configs
