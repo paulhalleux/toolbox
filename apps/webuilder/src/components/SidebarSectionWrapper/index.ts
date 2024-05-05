@@ -1,1 +1,0 @@
-export { SidebarSectionWrapper } from "./SidebarSectionWrapper";

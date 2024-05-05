@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from "react";
 import { clsx } from "clsx";
-import { NavbarLogo } from "./Logo";
+import { NavbarBrand } from "./Brand";
 
 type NavbarProps = ComponentPropsWithoutRef<"div">;
 
@@ -18,4 +18,4 @@ export function Navbar({ className, children, ...props }: NavbarProps) {
   );
 }
 
-Navbar.Logo = NavbarLogo;
+Navbar.Brand = NavbarBrand;

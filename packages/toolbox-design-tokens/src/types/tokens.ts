@@ -219,8 +219,8 @@ export type TypographyDesignToken<
   {
     family: TokenReference<Referencable, DesignTokenKind.FontFamily>;
     size: TokenReference<Referencable, DesignTokenKind.Size>;
-    lineHeight: TokenReference<Referencable, DesignTokenKind.LineHeight>;
-    weight: TokenReference<Referencable, DesignTokenKind.FontWeight>;
+    lineHeight?: TokenReference<Referencable, DesignTokenKind.LineHeight>;
+    weight?: TokenReference<Referencable, DesignTokenKind.FontWeight>;
     style?: "normal" | "italic" | "oblique" | "none";
     variant?: "normal" | "small-caps" | "none";
   },

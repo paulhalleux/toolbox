@@ -11,18 +11,17 @@ type ButtonProps = Omit<
 export function Button({
   size,
   icon,
+  type = "button",
   className,
   children,
   ...props
 }: ButtonProps) {
   const classes = buttonStyles({ size, icon, className });
   return (
-    <button className={classes} {...props}>
-      {typeof children === "string" ? (
-        <Text type="text-xs">{children}</Text>
-      ) : (
-        children
-      )}
-    </button>
+    <Text type="text-xs" className="font-black" asChild>
+      <button className={classes} type={type} {...props}>
+        {children}
+      </button>
+    </Text>
   );
 }

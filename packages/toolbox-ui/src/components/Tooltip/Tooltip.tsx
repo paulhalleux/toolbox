@@ -38,7 +38,10 @@ Tooltip.Content = React.forwardRef<
   return (
     <Popover.Content
       ref={propRef}
-      className={clsx("border border-base rounded bg-secondary p-1", className)}
+      className={clsx(
+        "border border-base rounded bg-secondary px-1",
+        className,
+      )}
       {...omit(props, ["ref"])}
     >
       <Text type="text-xs">{children}</Text>

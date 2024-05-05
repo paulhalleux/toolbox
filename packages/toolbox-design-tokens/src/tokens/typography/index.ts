@@ -7,7 +7,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.xs",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.xs",
     },
     $name: "typography-text-xs",
@@ -18,7 +17,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.sm",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.sm",
     },
     $name: "typography-text-sm",
@@ -29,7 +27,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.md",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.md",
     },
     $name: "typography-text-md",
@@ -40,7 +37,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.lg",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.lg",
     },
     $name: "typography-text-lg",
@@ -51,7 +47,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.xl",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.xl",
     },
     $name: "typography-text-xl",
@@ -62,7 +57,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.display-xs",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.display-xs",
     },
     $name: "typography-display-xs",
@@ -73,7 +67,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.display-sm",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.display-sm",
     },
     $name: "typography-display-sm",
@@ -84,7 +77,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.display-md",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.display-md",
     },
     $name: "typography-display-md",
@@ -95,7 +87,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.display-lg",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.display-lg",
     },
     $name: "typography-display-lg",
@@ -106,7 +97,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.display-xl",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.display-xl",
     },
     $name: "typography-display-xl",
@@ -117,7 +107,6 @@ export const typography = {
     $value: {
       family: "$ref:primitive.fontFamily.sans",
       size: "$ref:primitive.fontSize.display-xxl",
-      weight: "$ref:primitive.fontWeight.regular",
       lineHeight: "$ref:primitive.lineHeight.display-xxl",
     },
     $name: "typography-display-xxl",

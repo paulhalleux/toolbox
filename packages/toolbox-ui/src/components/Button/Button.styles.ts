@@ -5,11 +5,11 @@ export const buttonStyles = tv({
   variants: {
     size: {
       sm: "h-6 px-2",
-      md: "h-7 px-3",
-      lg: "h-8 px-4",
+      md: "h-8 px-3",
+      lg: "h-9 px-4",
     },
     variant: {
-      default: "bg-secondary border border-base",
+      default: "bg-secondary border border-base hover:bg-hover",
     },
     icon: {
       true: "aspect-square p-1",

@@ -1,20 +1,20 @@
 import { PropsWithChildren } from "react";
 import { Text } from "@toolbox/ui";
 
-type SidebarSectionWrapperProps = PropsWithChildren<{
+type SidebarSectionProps = PropsWithChildren<{
   title: string;
   addon?: React.ReactNode;
 }>;
 
-export function SidebarSectionWrapper({
+export function SidebarSection({
   title,
   children,
   addon,
-}: SidebarSectionWrapperProps) {
+}: SidebarSectionProps) {
   return (
     <section className="flex flex-col h-full">
       <Text
-        type="heading-h6"
+        type="text-xs"
         className="px-3 py-2 shrink-0 select-none flex justify-between"
       >
         {title} {addon}

@@ -8,11 +8,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "pnpm run build:lib && pnpm run build:css",
+    "build": "pnpm run build:lib && pnpm run build:css && pnpm run build:storybook",
     "build:lib": "tsup src/index.ts && tsc --declaration --emitDeclarationOnly --declarationDir dist",
     "build:css": "tailwindcss build src/index.css -o dist/styles.css",
-    "dev": "toolbox-storybook dev -p 6007",
-    "build-storybook": "toolbox-storybook build"
+    "build:storybook": "toolbox-storybook build",
+    "dev": "toolbox-storybook dev -p 6007"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
@@ -31,6 +31,7 @@
     "@toolbox/tailwind-config": "workspace:*",
     "@toolbox/typescript-config": "workspace:*",
     "@toolbox/ui": "workspace:*",
+    "@types/lodash": "^4.17.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

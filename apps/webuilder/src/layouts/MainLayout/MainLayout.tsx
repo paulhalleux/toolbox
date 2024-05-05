@@ -1,20 +1,27 @@
 import { Outlet } from "react-router";
 import { Button, Navbar, ThemeProvider } from "@toolbox/ui";
-import { useState } from "react";
+import { Logo } from "../../components/Logo";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useLocalStorage } from "react-use";
 
 export function MainLayout() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useLocalStorage<"light" | "dark">(
+    "webuilder_theme_local",
+    "light",
+  );
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ?? "light"}>
       <div className="h-screen flex flex-col">
         <Navbar className="flex items-center justify-between">
-          <Navbar.Logo src="/logo.svg" alt="logo" />
+          <Navbar.Brand>
+            <Logo />
+          </Navbar.Brand>
           <Button
-            size="sm"
+            icon
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            Toggle Theme
+            {theme === "light" ? <MoonIcon size={14} /> : <SunIcon size={14} />}
           </Button>
         </Navbar>
         <div className="grow">

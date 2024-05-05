@@ -112,7 +112,7 @@ export function Tree({
               data-next-item={getNextItem(node)?.id}
               data-prev-item={getPrevItem(node)?.id}
               className={clsx(
-                "flex items-center hover:bg-secondary !outline-none border border-[transparent] focus-visible:border-primitive-blue-500",
+                "flex items-center hover:bg-secondary !outline-none border border-[transparent] focus-visible:border-focus",
                 {
                   "bg-secondary": selectedNodes?.includes(node.id),
                 },

@@ -35,7 +35,7 @@ export const colors = {
       $name: "color-border-focus",
       $themeValues: {
         light: "$ref:primitive.colors.indigo.500",
-        dark: "$ref:primitive.colors.indigo.300",
+        dark: "$ref:primitive.colors.indigo.400",
       },
       $version: "1.0.0",
     },
@@ -46,7 +46,7 @@ export const colors = {
       $name: "color-surface-base",
       $themeValues: {
         light: "$ref:primitive.colors.white",
-        dark: "$ref:primitive.colors.gray.900",
+        dark: "$ref:primitive.colors.gray.1000",
       },
       $version: "1.0.0",
     },
@@ -55,6 +55,15 @@ export const colors = {
       $name: "color-surface-secondary",
       $themeValues: {
         light: "$ref:primitive.colors.gray.050",
+        dark: "$ref:primitive.colors.gray.900",
+      },
+      $version: "1.0.0",
+    },
+    hover: {
+      $kind: DesignTokenKind.Color,
+      $name: "color-surface-hover",
+      $themeValues: {
+        light: "$ref:primitive.colors.gray.100",
         dark: "$ref:primitive.colors.gray.800",
       },
       $version: "1.0.0",

@@ -1,8 +1,8 @@
 import { Tree } from "@toolbox/ui";
-import { SidebarSectionWrapper } from "../../../SidebarSectionWrapper";
 import { useLayersStore } from "../../../../state/content-store";
 import { PageLayer } from "../../../../types";
 import { useMemo } from "react";
+import { SidebarSection } from "../../../SidebarSection";
 
 export function LayersSection() {
   const layers = useLayersStore();
@@ -18,7 +18,7 @@ export function LayersSection() {
   };
 
   return (
-    <SidebarSectionWrapper title="Layers">
+    <SidebarSection title="Layers">
       {!layers.page ? (
         <div className="text-center text-gray-500">No page selected</div>
       ) : (
@@ -30,7 +30,7 @@ export function LayersSection() {
           data={tree}
         />
       )}
-    </SidebarSectionWrapper>
+    </SidebarSection>
   );
 }
 

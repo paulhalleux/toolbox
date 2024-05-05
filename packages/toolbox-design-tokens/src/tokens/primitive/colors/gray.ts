@@ -7,109 +7,73 @@ export const gray = {
   "025": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-025",
-    $themeValues: {
-      light: "#FCFCFD",
-      dark: "#FAFAFA",
-    },
+    $value: "#FCFCFC",
     $version: "1.0.0",
   },
   "050": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-050",
-    $themeValues: {
-      light: "#F9FAFB",
-      dark: "#F5F5F6",
-    },
+    $value: "#FAFAFA",
     $version: "1.0.0",
   },
   "100": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-100",
-    $themeValues: {
-      light: "#F2F4F7",
-      dark: "#F0F1F1",
-    },
+    $value: "#F4F4F5",
     $version: "1.0.0",
   },
   "200": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-200",
-    $themeValues: {
-      light: "#EAECF0",
-      dark: "#ECECED",
-    },
+    $value: "#E4E4E7",
     $version: "1.0.0",
   },
   "300": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-300",
-    $themeValues: {
-      light: "#D0D5DD",
-      dark: "#CECFD2",
-    },
+    $value: "#D4D4D8",
     $version: "1.0.0",
   },
   "400": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-400",
-    $themeValues: {
-      light: "#98A2B3",
-      dark: "#94969C",
-    },
+    $value: "#A1A1AA",
     $version: "1.0.0",
   },
   "500": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-500",
-    $themeValues: {
-      light: "#667085",
-      dark: "#85888E",
-    },
+    $value: "#71717A",
     $version: "1.0.0",
   },
   "600": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-600",
-    $themeValues: {
-      light: "#475467",
-      dark: "#61646C",
-    },
+    $value: "#52525B",
     $version: "1.0.0",
   },
   "700": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-700",
-    $themeValues: {
-      light: "#344054",
-      dark: "#333741",
-    },
+    $value: "#26262F",
     $version: "1.0.0",
   },
   "800": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-800",
-    $themeValues: {
-      light: "#1D2939",
-      dark: "#1F242F",
-    },
+    $value: "#1D1D20",
     $version: "1.0.0",
   },
   "900": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-900",
-    $themeValues: {
-      light: "#101828",
-      dark: "#161B26",
-    },
+    $value: "#18181B",
     $version: "1.0.0",
   },
   "1000": {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-gray-1000",
-    $themeValues: {
-      light: "#0C111D",
-      dark: "#0C111D",
-    },
+    $value: "#101012",
     $version: "1.0.0",
   },
 } satisfies DesignTokenGroup;

@@ -14,21 +14,17 @@ type ThemeProviderProps = PropsWithChildren<
   }
 >;
 
-export function ThemeProvider({
-  children,
-  target,
-  ...value
-}: ThemeProviderProps) {
+export function ThemeProvider({ children, target, theme }: ThemeProviderProps) {
   // update html data-theme attribute
   useEffect(() => {
-    (target ?? document.body).dataset.theme = value.theme;
+    (target ?? document.body).dataset.theme = theme;
     return () => {
       delete (target ?? document.body).dataset.theme;
     };
-  }, [target, value.theme]);
+  }, [target, theme]);
 
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
   );
 }
 

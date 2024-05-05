@@ -1,20 +1,17 @@
 import { ComponentPropsWithoutRef, ElementType, useState } from "react";
-import { textStyles, TextVariant } from "./Text.styles";
 import { clsx } from "clsx";
 import { AsChild } from "../AsChild";
 import { designTokens } from "@toolbox/design-tokens";
 
-type TextProps<Element extends ElementType> = Omit<
-  ComponentPropsWithoutRef<Element>,
-  keyof TextVariant
-> & {
-  type?: keyof typeof designTokens.typography;
-  as?: Element;
-  editable?: boolean;
-  onEdit?: (newValue: string) => void;
-  editInputClassName?: string;
-  asChild?: boolean;
-} & TextVariant;
+type TextProps<Element extends ElementType> =
+  ComponentPropsWithoutRef<Element> & {
+    type?: keyof typeof designTokens.typography;
+    as?: Element;
+    editable?: boolean;
+    onEdit?: (newValue: string) => void;
+    editInputClassName?: string;
+    asChild?: boolean;
+  };
 
 export function Text<Element extends ElementType = "p">({
   className,
@@ -27,7 +24,12 @@ export function Text<Element extends ElementType = "p">({
   ...props
 }: TextProps<Element>) {
   const Component = as || "p";
-  const classes = textStyles({ className });
+  const classes = clsx(
+    `leading-line-height-${type}`,
+    `text-size-${type}`,
+    `font-weight-${type}`,
+    className,
+  );
 
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(() => {
@@ -38,17 +40,7 @@ export function Text<Element extends ElementType = "p">({
     return "";
   });
 
-  if (asChild)
-    return (
-      <AsChild
-        {...props}
-        className={classes}
-        style={{
-          font: `var(--typography-${type})`,
-          ...props.style,
-        }}
-      />
-    );
+  if (asChild) return <AsChild {...props} className={classes} />;
 
   if (typeof props.children !== "string" && editable) {
     throw new Error(
@@ -64,9 +56,6 @@ export function Text<Element extends ElementType = "p">({
           classes,
           editInputClassName,
         )}
-        style={{
-          font: `var(--typography-${type})`,
-        }}
         autoFocus
         onBlur={(event) => {
           setEditing(false);
@@ -88,10 +77,6 @@ export function Text<Element extends ElementType = "p">({
         setText(props.children as string);
       }}
       {...props}
-      style={{
-        font: `var(--typography-${type})`,
-        ...props.style,
-      }}
     />
   );
 }

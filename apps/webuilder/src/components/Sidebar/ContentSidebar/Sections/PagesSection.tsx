@@ -1,5 +1,5 @@
 import { Button, Tree } from "@toolbox/ui";
-import { SidebarSectionWrapper } from "../../../SidebarSectionWrapper";
+import { SidebarSection } from "../../../SidebarSection";
 import { useContentStore } from "../../../../state/content-store";
 import { Page } from "../../../../types";
 import { useMemo } from "react";
@@ -20,7 +20,7 @@ export function PagesSection() {
   };
 
   return (
-    <SidebarSectionWrapper
+    <SidebarSection
       title="Pages"
       addon={
         <Button icon size="sm" onClick={() => pushModal("CreatePageModal")}>
@@ -35,7 +35,7 @@ export function PagesSection() {
         onNodeClick={onNodeSelect}
         data={tree}
       />
-    </SidebarSectionWrapper>
+    </SidebarSection>
   );
 }
 

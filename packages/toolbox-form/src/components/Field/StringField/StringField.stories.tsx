@@ -1,9 +1,8 @@
-import { Form as _Form } from "./Form";
 import { Meta, StoryObj } from "@storybook/react";
 import { WithCenteredContent, WithColorScheme } from "@toolbox/ui";
 import { Field } from "../Field";
 
-const meta: Meta<typeof _Form> = {
+const meta: Meta<typeof Field.String> = {
   decorators: [
     (Story) => (
       <div className="w-full p-6">
@@ -13,18 +12,17 @@ const meta: Meta<typeof _Form> = {
     WithCenteredContent,
     WithColorScheme,
   ],
-  title: "Components/Form",
-  component: _Form,
+  title: "Fields/String",
+  component: Field.String,
   argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Form: Story = {
+export const String: Story = {
   args: {
-    children: [<Field.String name="name" label="Name" />],
-    variant: "default",
-    type: "default",
+    label: "String field",
+    hideLabel: false,
   },
 };

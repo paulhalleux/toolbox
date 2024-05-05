@@ -11,11 +11,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm run build:lib && pnpm run build:css",
+    "build": "pnpm run build:lib && pnpm run build:css && pnpm run build:storybook",
     "build:lib": "tsup src/index.ts && tsc --declaration --emitDeclarationOnly --declarationDir dist",
     "build:css": "tailwindcss build src/index.css -o dist/styles.css",
-    "dev": "toolbox-storybook dev -p 6006",
-    "build-storybook": "toolbox-storybook build"
+    "build:storybook": "toolbox-storybook build",
+    "dev": "toolbox-storybook dev -p 6006"
   },
   "peerDependencies": {
     "react-resizable-panels": "^2.0.18",

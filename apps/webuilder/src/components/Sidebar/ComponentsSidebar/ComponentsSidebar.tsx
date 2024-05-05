@@ -1,5 +1,5 @@
-import { SidebarSectionWrapper } from "../../SidebarSectionWrapper";
+import { SidebarSection } from "../../SidebarSection";
 
 export function ComponentsSidebar() {
-  return <SidebarSectionWrapper title="Components"></SidebarSectionWrapper>;
+  return <SidebarSection title="Components"></SidebarSection>;
 }

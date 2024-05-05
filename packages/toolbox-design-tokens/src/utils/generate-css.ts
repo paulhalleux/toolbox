@@ -60,6 +60,7 @@ function getTokenValue(
   value: any,
   flattenedTokens: Record<string, DesignToken>,
 ): string {
+  if (!value) return "";
   if (typeof value === "string" && value.startsWith("$ref:")) {
     const ref = value.replace("$ref:", "");
     const token = flattenedTokens[ref];
