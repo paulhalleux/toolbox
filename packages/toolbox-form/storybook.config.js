@@ -1,3 +1,3 @@
 export default {
-  injectPreviewCss: "./src/index.css",
+  injectPreviewCss: "./src/index.storybook.css",
 };

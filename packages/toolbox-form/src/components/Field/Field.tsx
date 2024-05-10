@@ -1,7 +1,7 @@
 import { StringField } from "./StringField";
 import { CommonFieldProps, createField } from "./create-field";
 import React, { ComponentProps } from "react";
-import { AdditionalFields } from "../Form/create-form";
+import { AdditionalFields } from "../Form";
 
 export const createFieldComponent = <
   FieldName extends string | number | symbol,

@@ -39,6 +39,15 @@ export const colors = {
       },
       $version: "1.0.0",
     },
+    error: {
+      $kind: DesignTokenKind.Color,
+      $name: "color-border-error",
+      $themeValues: {
+        light: "$ref:primitive.colors.red.500",
+        dark: "$ref:primitive.colors.red.400",
+      },
+      $version: "1.0.0",
+    },
   },
   surface: {
     base: {
@@ -85,6 +94,15 @@ export const colors = {
       $themeValues: {
         light: "$ref:primitive.colors.gray.500",
         dark: "$ref:primitive.colors.gray.400",
+      },
+      $version: "1.0.0",
+    },
+    error: {
+      $kind: DesignTokenKind.Color,
+      $name: "color-text-error",
+      $themeValues: {
+        light: "$ref:primitive.colors.red.500",
+        dark: "$ref:primitive.colors.red.400",
       },
       $version: "1.0.0",
     },

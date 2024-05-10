@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues } from "react-hook-form/dist/types/fields";
 import { UseFormProps } from "react-hook-form/dist/types";
 import { createFieldComponent } from "../Field/Field";
-import { CommonFieldProps } from "../Field/create-field";
+import { CommonFieldProps } from "../Field";
 
 export type AdditionalFields = Record<
   string,
@@ -78,24 +78,3 @@ export function createForm<
     return <FormComponent {...props} />;
   };
 }
-
-const MyForm = createForm(
-  ({ form, Field }) => {
-    return function MyFormComponent() {
-      return (
-        <form onSubmit={form.handleSubmit(() => {})}>
-          <Field.Custom name="name" control={form.control} />
-        </form>
-      );
-    };
-  },
-  {
-    customFields: {
-      Custom: () => null,
-    },
-    schema: z.object({
-      name: z.string(),
-      age: z.number(),
-    }),
-  },
-);

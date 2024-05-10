@@ -1,6 +1,7 @@
 import { DesignTokenGroup, DesignTokenKind } from "../../../types";
 import { gray } from "./gray";
 import { indigo } from "./indigot";
+import { red } from "./red";
 
 /**
  * Primary color tokens
@@ -8,6 +9,7 @@ import { indigo } from "./indigot";
 export const colors = {
   gray,
   indigo,
+  red,
   white: {
     $kind: DesignTokenKind.Color,
     $name: "primitive-color-white",

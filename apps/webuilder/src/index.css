@@ -1,2 +1,3 @@
 @import "@toolbox/tailwind-config/base.css";
 @import "@toolbox/ui/dist/styles.css";
+@import "@toolbox/form/dist/styles.css";

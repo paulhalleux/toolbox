@@ -5,17 +5,25 @@
 @tailwind utilities;
 
 html, body, #root {
-  background: var(--color-surface-base);
   min-height: 100vh;
 }
 
 * {
+  font-family: inherit, sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[data-theme] {
   font-family: var(--primitive-font-family-sans), sans-serif;
   font-size: var(--primitive-font-size-sm);
   line-height: var(--primitive-line-height-sm);
   font-weight: var(--primitive-font-weight-regular);
+  background: var(--color-surface-base);
   color: var(--color-text-base);
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
 }

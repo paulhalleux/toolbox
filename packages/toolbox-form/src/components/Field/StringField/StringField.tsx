@@ -9,6 +9,13 @@ export type StringFieldProps = Omit<
   type?: "text" | "password";
 } & CommonFieldProps<string>;
 
-export function StringField(props: StringFieldProps) {
-  return <Input {...props} id={props.name} name={props.name} />;
+export function StringField({ name, valid, ...props }: StringFieldProps) {
+  return (
+    <Input
+      {...props}
+      id={name}
+      name={name}
+      state={valid ? undefined : "error"}
+    />
+  );
 }

@@ -2,9 +2,11 @@ import { Form as _Form } from "./Form";
 import { Meta, StoryObj } from "@storybook/react";
 import { WithCenteredContent, WithColorScheme } from "@toolbox/ui";
 import { Field } from "../Field";
+import { WithReactHookForm } from "../../storybook-decorators/react-hook-form";
 
 const meta: Meta<typeof _Form> = {
   decorators: [
+    WithReactHookForm,
     (Story) => (
       <div className="w-full p-6">
         <Story />

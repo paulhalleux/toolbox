@@ -73,10 +73,12 @@ export default {
       textColor: {
         base: tokenLibrary.toCSSVar("colors.text.base"),
         secondary: tokenLibrary.toCSSVar("colors.text.secondary"),
+        error: tokenLibrary.toCSSVar("colors.text.error"),
       },
       borderColor: {
         base: tokenLibrary.toCSSVar("colors.border.base"),
         focus: tokenLibrary.toCSSVar("colors.border.focus"),
+        error: tokenLibrary.toCSSVar("colors.border.error"),
       },
     },
   },

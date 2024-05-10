@@ -6,8 +6,14 @@ import { clsx } from "clsx";
 type InputProps = Omit<ComponentPropsWithoutRef<"input">, keyof InputVariant> &
   InputVariant;
 
-export function Input({ className, size, disabled, ...props }: InputProps) {
-  const classes = inputStyles({ size, disabled, className });
+export function Input({
+  className,
+  size,
+  disabled,
+  state = "default",
+  ...props
+}: InputProps) {
+  const classes = inputStyles({ size, disabled, state, className });
   return (
     <Text asChild type="text-xs">
       <input

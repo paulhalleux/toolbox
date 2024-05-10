@@ -1,73 +1,73 @@
 import { DesignTokenGroup, DesignTokenKind } from "../../../types";
 
 /**
- * Indigo color tokens
+ * Red color tokens
  */
-export const indigo = {
+export const red = {
   "050": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-050",
-    $value: "#EEF4FF",
+    $name: "primitive-color-red-050",
+    $value: "#fef2f2",
     $version: "1.0.0",
   },
   "100": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-100",
-    $value: "#E0EAFF",
+    $name: "primitive-color-red-100",
+    $value: "#fee2e2",
     $version: "1.0.0",
   },
   "200": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-200",
-    $value: "#C7D7FE",
+    $name: "primitive-color-red-200",
+    $value: "#fecaca",
     $version: "1.0.0",
   },
   "300": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-300",
-    $value: "#A4BCFD",
+    $name: "primitive-color-red-300",
+    $value: "#fca5a5",
     $version: "1.0.0",
   },
   "400": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-400",
-    $value: "#8098F9",
+    $name: "primitive-color-red-400",
+    $value: "#f87171",
     $version: "1.0.0",
   },
   "500": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-500",
-    $value: "#6172F3",
+    $name: "primitive-color-red-500",
+    $value: "#ef4444",
     $version: "1.0.0",
   },
   "600": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-600",
-    $value: "#444CE7",
+    $name: "primitive-color-red-600",
+    $value: "#dc2626",
     $version: "1.0.0",
   },
   "700": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-700",
-    $value: "#3538CD",
+    $name: "primitive-color-red-700",
+    $value: "#b91c1c",
     $version: "1.0.0",
   },
   "800": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-800",
-    $value: "#2D31A6",
+    $name: "primitive-color-red-800",
+    $value: "#991b1b",
     $version: "1.0.0",
   },
   "900": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-900",
-    $value: "#2D3282",
+    $name: "primitive-color-red-900",
+    $value: "#7f1d1d",
     $version: "1.0.0",
   },
   "1000": {
     $kind: DesignTokenKind.Color,
-    $name: "primitive-color-indigo-1000",
-    $value: "#1F235B",
+    $name: "primitive-color-red-1000",
+    $value: "#450a0a",
     $version: "1.0.0",
   },
 } satisfies DesignTokenGroup;

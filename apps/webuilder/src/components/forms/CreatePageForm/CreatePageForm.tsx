@@ -16,8 +16,18 @@ export const CreatePageForm = createForm(
     return function ({ id }: CreatePageFormProps) {
       return (
         <Form id={id} onSubmit={form.handleSubmit(console.log)}>
-          <Field.String label="Name" name="name" control={form.control} />
-          <Field.String label="Route" name="route" control={form.control} />
+          <Field.String
+            label="Name"
+            name="name"
+            control={form.control}
+            placeholder="eg. Home"
+          />
+          <Field.String
+            label="Route"
+            name="route"
+            control={form.control}
+            placeholder="eg. /home"
+          />
           <Field.String
             label="Parent page"
             name="parentId"

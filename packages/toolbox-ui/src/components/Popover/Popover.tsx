@@ -154,17 +154,14 @@ const PopoverTrigger = React.forwardRef<HTMLElement, PopoverTriggerProps>(
     }
 
     return (
-      <span
+      <div
         ref={ref}
         data-state={context.open ? "open" : "closed"}
-        style={{
-          display: "inline-block",
-          ...style,
-        }}
+        style={style}
         {...context.getReferenceProps(props)}
       >
         {children}
-      </span>
+      </div>
     );
   },
 );

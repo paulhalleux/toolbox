@@ -11,6 +11,8 @@ type TextProps<Element extends ElementType> =
     onEdit?: (newValue: string) => void;
     editInputClassName?: string;
     asChild?: boolean;
+    ellipsis?: boolean;
+    textRef?: React.RefObject<HTMLDivElement>;
   };
 
 export function Text<Element extends ElementType = "p">({
@@ -21,6 +23,8 @@ export function Text<Element extends ElementType = "p">({
   editInputClassName,
   onEdit,
   asChild,
+  ellipsis,
+  textRef,
   ...props
 }: TextProps<Element>) {
   const Component = as || "p";
@@ -28,6 +32,9 @@ export function Text<Element extends ElementType = "p">({
     `leading-line-height-${type}`,
     `text-size-${type}`,
     `font-weight-${type}`,
+    {
+      "text-ellipsis overflow-hidden min-w-0 text-nowrap": ellipsis,
+    },
     className,
   );
 
@@ -70,6 +77,7 @@ export function Text<Element extends ElementType = "p">({
   return (
     <Component
       className={classes}
+      ref={textRef}
       onDoubleClick={(event) => {
         if (!editable) return;
         event.stopPropagation();

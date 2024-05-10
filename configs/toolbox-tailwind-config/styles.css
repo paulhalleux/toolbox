@@ -7,16 +7,21 @@
 @tailwind utilities;
 
 html, body, #root {
-  background: var(--color-surface-base);
-  min-height: 100vh;
-}
-
-* {
   font-family: var(--primitive-font-family-sans), sans-serif;
   font-size: var(--primitive-font-size-sm);
   line-height: var(--primitive-line-height-sm);
   font-weight: var(--primitive-font-weight-regular);
   color: var(--color-text-base);
+  background: var(--color-surface-base);
+  min-height: 100vh;
+}
+
+* {
+  font-family: inherit, sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -45,8 +50,18 @@ html, body, #root {
   --primitive-color-indigo-800: #2D31A6;
   --primitive-color-indigo-900: #2D3282;
   --primitive-color-indigo-1000: #1F235B;
-  --primitive-color-indigo-025: #F5F8FF;
   --primitive-color-indigo-050: #EEF4FF;
+  --primitive-color-red-100: #fee2e2;
+  --primitive-color-red-200: #fecaca;
+  --primitive-color-red-300: #fca5a5;
+  --primitive-color-red-400: #f87171;
+  --primitive-color-red-500: #ef4444;
+  --primitive-color-red-600: #dc2626;
+  --primitive-color-red-700: #b91c1c;
+  --primitive-color-red-800: #991b1b;
+  --primitive-color-red-900: #7f1d1d;
+  --primitive-color-red-1000: #450a0a;
+  --primitive-color-red-050: #fef2f2;
   --primitive-color-white: #ffffff;
   --primitive-color-black: #000000;
   --primitive-font-size-xs: 12px;
@@ -95,20 +110,24 @@ html, body, #root {
   --color-reverse: var(--primitive-color-gray-900);
   --color-border-base: var(--primitive-color-gray-300);
   --color-border-focus: var(--primitive-color-indigo-500);
+  --color-border-error: var(--primitive-color-red-500);
   --color-surface-base: var(--primitive-color-white);
   --color-surface-secondary: var(--primitive-color-gray-050);
   --color-surface-hover: var(--primitive-color-gray-100);
   --color-text-base: var(--primitive-color-gray-900);
   --color-text-secondary: var(--primitive-color-gray-500);
+  --color-text-error: var(--primitive-color-red-500);
 }
 [data-theme="dark"] {
   --color-base: var(--primitive-color-gray-900);
   --color-reverse: var(--primitive-color-white);
   --color-border-base: var(--primitive-color-gray-700);
   --color-border-focus: var(--primitive-color-indigo-400);
+  --color-border-error: var(--primitive-color-red-400);
   --color-surface-base: var(--primitive-color-gray-1000);
   --color-surface-secondary: var(--primitive-color-gray-900);
   --color-surface-hover: var(--primitive-color-gray-800);
   --color-text-base: var(--primitive-color-white);
   --color-text-secondary: var(--primitive-color-gray-400);
+  --color-text-error: var(--primitive-color-red-400);
 }
