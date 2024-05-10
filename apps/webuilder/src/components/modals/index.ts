@@ -1,5 +1,5 @@
 import { createPushModal } from "@toolbox/ui";
-import { CreatePageModal } from "./CreatePageModal/CreatePageModal";
+import { CreatePageModal } from "./CreatePageModal";
 
 const { pushModal, ModalProvider } = createPushModal({
   modals: {

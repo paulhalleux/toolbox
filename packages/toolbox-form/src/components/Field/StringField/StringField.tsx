@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { Input } from "@toolbox/ui";
-import { CommonFieldProps, FieldPropsKeys } from "../Field";
+import { CommonFieldProps, FieldPropsKeys } from "../create-field";
 
 export type StringFieldProps = Omit<
   ComponentProps<typeof Input>,
@@ -9,21 +9,6 @@ export type StringFieldProps = Omit<
   type?: "text" | "password";
 } & CommonFieldProps<string>;
 
-export function StringField({
-  type = "text",
-  name,
-  onChange,
-  ...props
-}: StringFieldProps) {
-  return (
-    <Input
-      {...props}
-      type={type}
-      name={name}
-      id={name}
-      onChange={(event) => {
-        onChange?.(event.target.value);
-      }}
-    />
-  );
+export function StringField(props: StringFieldProps) {
+  return <Input {...props} id={props.name} name={props.name} />;
 }

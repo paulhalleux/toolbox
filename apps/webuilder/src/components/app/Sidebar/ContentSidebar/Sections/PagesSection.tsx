@@ -1,10 +1,10 @@
 import { Button, Tree } from "@toolbox/ui";
-import { SidebarSection } from "../../../SidebarSection";
-import { useContentStore } from "../../../../state/content-store";
-import { Page } from "../../../../types";
 import { useMemo } from "react";
 import { PlusIcon } from "lucide-react";
-import { pushModal } from "../../..";
+import { useContentStore } from "../../../../../state/content-store";
+import { SidebarSection } from "../../../../common";
+import { Page } from "../../../../../types";
+import { pushModal } from "../../../../modals";
 
 export function PagesSection() {
   const content = useContentStore();

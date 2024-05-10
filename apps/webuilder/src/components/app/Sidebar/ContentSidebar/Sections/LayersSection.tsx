@@ -1,8 +1,8 @@
 import { Tree } from "@toolbox/ui";
-import { useLayersStore } from "../../../../state/content-store";
-import { PageLayer } from "../../../../types";
 import { useMemo } from "react";
-import { SidebarSection } from "../../../SidebarSection";
+import { useLayersStore } from "../../../../../state/content-store";
+import { SidebarSection } from "../../../../common";
+import { PageLayer } from "../../../../../types";
 
 export function LayersSection() {
   const layers = useLayersStore();

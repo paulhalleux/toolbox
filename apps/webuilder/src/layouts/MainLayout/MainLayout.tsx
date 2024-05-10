@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 import { Button, Navbar, ThemeProvider } from "@toolbox/ui";
-import { Logo } from "../../components/Logo";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useLocalStorage } from "react-use";
+import { Logo } from "../../components";
 
 export function MainLayout() {
   const [theme, setTheme] = useLocalStorage<"light" | "dark">(
